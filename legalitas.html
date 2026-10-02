@@ -146,33 +146,67 @@
     </nav>
 
 
-    <!-- HERO -->
-    <header class="pt-20 bg-navyDark">
+   
+<!-- HERO LEGALITAS -->
+<header class="relative isolate overflow-hidden bg-navyDark pt-20">
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Background Image -->
+    <div class="absolute inset-0 -z-20">
+        <img
+            src="cover-legalitas.png"
+            alt=""
+            aria-hidden="true"
+            class="absolute right-0 top-0 h-full w-full object-cover object-right"
+        >
+    </div>
 
-            <div class="py-24 sm:py-32 text-center">
+    <!-- Gradient: gambar tajam di kanan, memudar ke navy di kiri -->
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r
+                from-navyDark
+                via-navyDark/90
+                via-45%
+                to-navyDark/10">
+    </div>
 
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-burgundy/30 border border-burgundy text-warmBronze text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6">
+    <!-- Overlay tambahan untuk menjaga kontras -->
+    <div class="absolute inset-0 -z-10 bg-navyDark/15"></div>
+
+    <!-- Hero Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="min-h-[600px] py-24 sm:py-32 flex items-center">
+
+            <div class="max-w-2xl space-y-6">
+
+                <div class="inline-flex items-center gap-2 px-3 py-1.5
+                            rounded-full bg-burgundy/30 border border-burgundy
+                            text-warmBronze text-xs sm:text-sm font-semibold
+                            tracking-wider uppercase">
                     <i class="fa-solid fa-shield-halved"></i>
                     Legalitas & Akreditasi
                 </div>
 
-                <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight tracking-tight">
-                    Legalitas & <span class="text-warmBronze">Akreditasi Resmi</span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold
+                           text-white leading-tight tracking-tight">
+                    Legalitas &
+                    <span class="text-warmBronze">Akreditasi Resmi</span>
                 </h1>
 
-                <p class="max-w-2xl mx-auto mt-6 text-base sm:text-lg text-slate-300 leading-relaxed">
-                    PT. Hasna Jaya Sejahtera menjalankan kegiatan usaha dengan
-                    didukung legalitas, sertifikasi, serta standar manajemen
-                    yang menjadi dasar dalam memberikan layanan profesional.
+                <p class="max-w-xl text-base sm:text-lg
+                          text-slate-300 leading-relaxed">
+                    PT. Hasna Jaya Sejahtera menjalankan kegiatan usaha
+                    dengan didukung legalitas, sertifikasi, serta standar
+                    manajemen yang menjadi dasar dalam memberikan layanan
+                    profesional.
                 </p>
 
             </div>
 
         </div>
 
-    </header>
+    </div>
+
+</header>
 
 
     <!-- MAIN CONTENT -->
