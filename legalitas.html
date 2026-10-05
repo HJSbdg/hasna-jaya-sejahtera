@@ -26,6 +26,25 @@
         }
     </script>
 
+    <!-- Animasi muncul saat halaman dibuka & saat di-scroll -->
+    <script>document.documentElement.classList.add('js');</script>
+    <style>
+        @keyframes revealUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        /* Disembunyikan hanya kalau JS aktif, jadi kalau JS gagal konten tetap tampil */
+        .js .reveal { opacity: 0; }
+        .js .reveal.is-visible {
+            opacity: 1;
+            animation: revealUp .7s cubic-bezier(.22, 1, .36, 1) backwards;
+            animation-delay: var(--d, 0ms);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .js .reveal, .js .reveal.is-visible { opacity: 1; animation: none; }
+        }
+    </style>
+
     <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -177,7 +196,7 @@
      <div class="min-h-[420px] py-16 sm:py-20 flex items-center">
             <div class="max-w-2xl space-y-6">
 
-                <div class="inline-flex items-center gap-2 px-3 py-1.5
+                <div class="reveal inline-flex items-center gap-2 px-3 py-1.5
                             rounded-full bg-burgundy/30 border border-burgundy
                             text-warmBronze text-xs sm:text-sm font-semibold
                             tracking-wider uppercase">
@@ -185,13 +204,13 @@
                     Legalitas & Akreditasi
                 </div>
 
-                <h1 class="text-4xl sm:text-6xl font-extrabold
+                <h1 class="reveal text-4xl sm:text-6xl font-extrabold
                            text-white leading-tight tracking-tight">
                     Legalitas &
                     <span class="text-warmBronze">Akreditasi Resmi</span>
                 </h1>
 
-                <p class="max-w-xl text-base sm:text-lg
+                <p class="reveal max-w-xl text-base sm:text-lg
                           text-slate-300 leading-relaxed">
                     PT. Hasna Jaya Sejahtera menjalankan kegiatan usaha
                     dengan didukung legalitas, sertifikasi, serta standar
@@ -216,7 +235,7 @@
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="reveal text-center max-w-3xl mx-auto mb-16">
 
                     <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">
                         Legalitas Perusahaan
@@ -232,7 +251,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
                     <!-- Akta -->
-                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
+                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
 
                         <div class="w-14 h-14 rounded-xl bg-burgundy/20 text-burgundy flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-file-signature"></i>
@@ -250,7 +269,7 @@
 
 
                     <!-- NIB -->
-                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
+                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
 
                         <div class="w-14 h-14 rounded-xl bg-warmBrown/20 text-warmBronze flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-building"></i>
@@ -268,7 +287,7 @@
 
 
                     <!-- NPWP -->
-                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-burgundy transition">
+                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-burgundy transition">
 
                         <div class="w-14 h-14 rounded-xl bg-burgundy/20 text-burgundy flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-receipt"></i>
@@ -296,7 +315,7 @@
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="reveal text-center max-w-3xl mx-auto mb-16">
 
                     <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">
                         Kompetensi & Sertifikasi
@@ -312,7 +331,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
                     <!-- Gada Utama -->
-                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
+                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
 
                         <div class="w-14 h-14 rounded-xl bg-warmBrown/20 text-warmBronze flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-shield-halved"></i>
@@ -330,7 +349,7 @@
 
 
                     <!-- LA LPK -->
-                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-burgundy transition">
+                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-burgundy transition">
 
                         <div class="w-14 h-14 rounded-xl bg-burgundy/20 text-burgundy flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-certificate"></i>
@@ -348,7 +367,7 @@
 
 
                     <!-- TOT -->
-                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
+                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
 
                         <div class="w-14 h-14 rounded-xl bg-warmBrown/20 text-warmBronze flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-chalkboard-user"></i>
@@ -376,7 +395,7 @@
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="reveal text-center max-w-3xl mx-auto mb-16">
 
                     <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">
                         Standar Manajemen
@@ -392,7 +411,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
                     <!-- ISO 9001 -->
-                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
+                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
 
                         <div class="w-14 h-14 rounded-xl bg-warmBrown/20 text-warmBronze flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-gears"></i>
@@ -410,7 +429,7 @@
 
 
                     <!-- ISO 37001 -->
-                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-burgundy transition">
+                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-burgundy transition">
 
                         <div class="w-14 h-14 rounded-xl bg-burgundy/20 text-burgundy flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-scale-balanced"></i>
@@ -428,7 +447,7 @@
 
 
                     <!-- ISO 45001 -->
-                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
+                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
 
                         <div class="w-14 h-14 rounded-xl bg-warmBrown/20 text-warmBronze flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-helmet-safety"></i>
@@ -456,7 +475,7 @@
 
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="text-center max-w-3xl mx-auto mb-10">
+                <div class="reveal text-center max-w-3xl mx-auto mb-10">
 
                     <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">
                         Perlindungan Tenaga Kerja
@@ -481,7 +500,7 @@
 
                         <div class="flex flex-wrap justify-center items-center gap-3">
 
-                            <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
+                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
                                 <img
                                     src="bpjs-kesehatan.png"
                                     alt="BPJS Kesehatan"
@@ -490,7 +509,7 @@
                                 >
                             </div>
 
-                            <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
+                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
                                 <img
                                     src="bpjs-ketenagakerjaan.png"
                                     alt="BPJS Ketenagakerjaan"
@@ -499,7 +518,7 @@
                                 >
                             </div>
 
-                            <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
+                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
                                 <img
                                     src="kemnaker.jpg"
                                     alt="Kementerian Ketenagakerjaan Republik Indonesia"
@@ -508,7 +527,7 @@
                                 >
                             </div>
 
-                            <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
+                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
                                 <img
                                     src="kadin.jpg"
                                     alt="KADIN DKI Jakarta"
@@ -517,7 +536,7 @@
                                 >
                             </div>
 
-                            <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
+                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
                                 <img
                                     src="gemah-ripah.jpg"
                                     alt="Gemah Ripah Wibawa Mukti"
@@ -526,7 +545,7 @@
                                 >
                             </div>
 
-                            <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
+                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
                                 <img
                                     src="iso_transparan.png"
                                     alt="Sertifikasi ISO 9001:2015, ISO 45001:2016, dan ISO 37001:2016"
@@ -535,7 +554,7 @@
                                 >
                             </div>
 
-                            <div class="bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
+                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
                                 <img
                                     src="asosiasi.jpg"
                                     alt="Asosiasi Perusahaan Klining Servis Indonesia"
@@ -682,6 +701,40 @@
 
         });
 
+    </script>
+
+
+    <script>
+        // Animasi muncul: pertama kali dibuka dan setiap elemen masuk layar saat di-scroll
+        (function () {
+            const items = document.querySelectorAll('.reveal');
+            if (!items.length) return;
+
+            // Jeda bertingkat (stagger) untuk elemen bersaudara: 0, 80, 160 ms, dst.
+            const seen = new Map();
+            items.forEach((el) => {
+                const i = seen.get(el.parentElement) || 0;
+                el.style.setProperty('--d', Math.min(i, 6) * 80 + 'ms');
+                seen.set(el.parentElement, i + 1);
+            });
+
+            if (!('IntersectionObserver' in window)) {
+                items.forEach((el) => el.classList.add('is-visible'));
+                return;
+            }
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    // tampil kalau masuk layar, atau kalau sudah terlewat (mis. reload di tengah halaman)
+                    if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
+                        entry.target.classList.add('is-visible');
+                        io.unobserve(entry.target);   // sekali saja, tidak berulang
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+            items.forEach((el) => io.observe(el));
+        })();
     </script>
 
 </body>
