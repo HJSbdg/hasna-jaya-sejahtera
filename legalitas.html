@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Legalitas & Akreditasi - PT. Hasna Jaya Sejahtera</title>
-
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
         tailwind.config = {
             theme: {
@@ -25,717 +21,261 @@
             }
         }
     </script>
-
-    <!-- Animasi muncul saat halaman dibuka & saat di-scroll -->
-    <script>document.documentElement.classList.add('js');</script>
-    <style>
-        @keyframes revealUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        /* Disembunyikan hanya kalau JS aktif, jadi kalau JS gagal konten tetap tampil */
-        .js .reveal { opacity: 0; }
-        .js .reveal.is-visible {
-            opacity: 1;
-            animation: revealUp .7s cubic-bezier(.22, 1, .36, 1) backwards;
-            animation-delay: var(--d, 0ms);
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .js .reveal, .js .reveal.is-visible { opacity: 1; animation: none; }
-        }
-    </style>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
-
-<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+<body class="bg-slate-900 text-slate-100 font-sans antialiased overflow-x-hidden">
 
     <!-- NAVBAR -->
-    <nav class="fixed top-0 left-0 w-full bg-navyDark/90 backdrop-blur-md z-50 border-b border-warmBrown/20">
+    <nav class="fixed top-0 left-0 w-full bg-navyDark/90 backdrop-blur-md z-50 border-b border-warmBrown/20 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-
-            <!-- Logo -->
             <a href="index.html" class="flex items-center gap-3">
-                <img src="logo.png"
-                     alt="PT Hasna Jaya Sejahtera Logo"
-                     class="h-10 sm:h-12 md:h-14 w-auto object-contain">
-
+                <img src="logo.png" alt="PT Hasna Jaya Sejahtera Logo" class="h-12 w-auto object-contain">
                 <span class="font-bold text-lg sm:text-xl tracking-wide text-white">
                     PT. HASNA JAYA SEJAHTERA
                 </span>
             </a>
 
-            <!-- Menu Desktop -->
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-
-                <a href="index.html"
-                   class="hover:text-warmBronze transition">
-                    Beranda
-                </a>
-
-                <a href="index.html#tentang"
-                   class="hover:text-warmBronze transition">
-                    Tentang Kami
-                </a>
-
-                <a href="index.html#layanan"
-                   class="hover:text-warmBronze transition">
-                    Layanan
-                </a>
-
-                <a href="index.html#keunggulan"
-                   class="hover:text-warmBronze transition">
-                    Keunggulan
-                </a>
-
-                <!-- Active -->
-                <a href="legalitas.html"
-                   class="text-warmBronze font-semibold border-b-2 border-warmBronze pb-1">
-                    Legalitas
-                </a>
-
-                <a href="klien.html"
-                   class="hover:text-warmBronze transition">
-                    Klien
-                </a>
-
-                <a href="index.html#kontak"
-                   class="bg-burgundy hover:bg-burgundyHover text-white px-5 py-2.5 rounded-full font-semibold transition shadow-lg shadow-burgundy/30">
+                <a href="index.html" class="hover:text-warmBronze transition">Beranda</a>
+                <a href="index.html#tentang" class="hover:text-warmBronze transition">Tentang Kami</a>
+                <a href="index.html#layanan" class="hover:text-warmBronze transition">Layanan</a>
+                <a href="index.html#keunggulan" class="hover:text-warmBronze transition">Keunggulan</a>
+                <a href="legalitas.html" class="text-warmBronze font-semibold border-b-2 border-warmBronze pb-1">Legalitas</a>
+                <a href="klien.html" class="hover:text-warmBronze transition">Klien</a>
+                <a href="index.html#kontak" class="bg-burgundy hover:bg-burgundyHover text-white px-5 py-2.5 rounded-full font-semibold transition shadow-lg shadow-burgundy/30">
                     Hubungi Kami
                 </a>
-
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="menu-btn"
-                    type="button"
-                    aria-label="Buka menu navigasi"
-                    aria-controls="mobile-menu"
-                    aria-expanded="false"
-                    class="md:hidden text-slate-300 hover:text-white focus:outline-none">
-
+            <button id="menu-btn" type="button" aria-label="Buka menu navigasi" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
                 <i class="fa-solid fa-bars text-2xl"></i>
-
             </button>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-             class="hidden md:hidden bg-navyDark border-b border-warmBrown/20 px-4 pt-2 pb-6 space-y-3">
-
-            <a href="index.html"
-               class="block hover:text-warmBronze transition">
-                Beranda
-            </a>
-
-            <a href="index.html#tentang"
-               class="block hover:text-warmBronze transition">
-                Tentang Kami
-            </a>
-
-            <a href="index.html#layanan"
-               class="block hover:text-warmBronze transition">
-                Layanan
-            </a>
-
-            <a href="index.html#keunggulan"
-               class="block hover:text-warmBronze transition">
-                Keunggulan
-            </a>
-
-            <!-- Active -->
-            <a href="legalitas.html"
-               class="block text-warmBronze font-semibold">
-                Legalitas
-            </a>
-
-            <a href="klien.html"
-               class="block hover:text-warmBronze transition">
-                Klien
-            </a>
-
-            <a href="index.html#kontak"
-               class="inline-block bg-burgundy hover:bg-burgundyHover text-white px-5 py-2 rounded-full font-semibold mt-2">
+        <div id="mobile-menu" class="hidden md:hidden bg-navyDark border-b border-warmBrown/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block hover:text-warmBronze transition">Beranda</a>
+            <a href="index.html#tentang" class="block hover:text-warmBronze transition">Tentang Kami</a>
+            <a href="index.html#layanan" class="block hover:text-warmBronze transition">Layanan</a>
+            <a href="index.html#keunggulan" class="block hover:text-warmBronze transition">Keunggulan</a>
+            <a href="legalitas.html" class="block text-warmBronze font-semibold">Legalitas</a>
+            <a href="klien.html" class="block hover:text-warmBronze transition">Klien</a>
+            <a href="index.html#kontak" class="inline-block bg-burgundy hover:bg-burgundyHover text-white px-5 py-2 rounded-full font-semibold mt-2">
                 Hubungi Kami
             </a>
-
         </div>
     </nav>
 
-
-   
-<!-- HERO LEGALITAS -->
-<header class="relative isolate overflow-hidden bg-navyDark pt-20">
-
-    <!-- Background Image -->
-    <div class="absolute inset-0 -z-20">
-        <img
-            src="cover-legalitas.png"
-            alt=""
-            aria-hidden="true"
-            class="absolute right-0 top-0 h-full w-full object-cover object-right"
-        >
-    </div>
-
-    <!-- Gradient: gambar tajam di kanan, memudar ke navy di kiri -->
-    <div class="absolute inset-0 -z-10 bg-gradient-to-r
-                from-navyDark
-                via-navyDark/90
-                via-45%
-                to-navyDark/10">
-    </div>
-
-    <!-- Overlay tambahan untuk menjaga kontras -->
-    <div class="absolute inset-0 -z-10 bg-navyDark/15"></div>
-
-    <!-- Hero Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-     <div class="min-h-[420px] py-16 sm:py-20 flex items-center">
-            <div class="max-w-2xl space-y-6">
-
-                <div class="reveal inline-flex items-center gap-2 px-3 py-1.5
-                            rounded-full bg-burgundy/30 border border-burgundy
-                            text-warmBronze text-xs sm:text-sm font-semibold
-                            tracking-wider uppercase">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    Legalitas & Akreditasi
-                </div>
-
-                <h1 class="reveal text-4xl sm:text-6xl font-extrabold
-                           text-white leading-tight tracking-tight">
-                    Legalitas &
-                    <span class="text-warmBronze">Akreditasi Resmi</span>
-                </h1>
-
-                <p class="reveal max-w-xl text-base sm:text-lg
-                          text-slate-300 leading-relaxed">
-                    PT. Hasna Jaya Sejahtera menjalankan kegiatan usaha
-                    dengan didukung legalitas, sertifikasi, serta standar
-                    manajemen yang menjadi dasar dalam memberikan layanan
-                    profesional.
-                </p>
-
-            </div>
-
+    <!-- HERO LEGALITAS -->
+    <header class="relative isolate overflow-hidden bg-navyDark pt-20">
+        <div class="absolute inset-0 -z-20">
+            <img src="cover-legalitas.png" alt="" aria-hidden="true" class="absolute right-0 top-0 h-full w-full object-cover object-right">
         </div>
 
-    </div>
+        <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navyDark via-navyDark/90 via-45% to-navyDark/10"></div>
+        <div class="absolute inset-0 -z-10 bg-navyDark/15"></div>
 
-</header>
-
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="min-h-[420px] py-16 sm:py-20 flex items-center">
+                <div class="max-w-2xl space-y-6" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-burgundy/30 border border-burgundy text-warmBronze text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-shield-halved"></i> Legalitas & Akreditasi
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight tracking-tight">
+                        Legalitas & <br><span class="text-warmBronze">Akreditasi Resmi</span>
+                    </h1>
+                    <p class="max-w-xl text-base sm:text-lg text-slate-300 leading-relaxed">
+                        PT. Hasna Jaya Sejahtera menjalankan kegiatan usaha dengan didukung legalitas, sertifikasi, serta standar manajemen yang menjadi dasar dalam memberikan layanan profesional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <!-- MAIN CONTENT -->
     <main>
-
         <!-- DOKUMEN PENDIRIAN -->
         <section class="py-24 bg-slate-900">
-
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div class="reveal text-center max-w-3xl mx-auto mb-16">
-
-                    <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">
-                        Legalitas Perusahaan
-                    </h2>
-
-                    <h3 class="text-3xl sm:text-4xl font-bold text-white">
-                        Dokumen Pendirian & Perizinan Usaha
-                    </h3>
-
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">Legalitas Perusahaan</h2>
+                    <h3 class="text-3xl sm:text-4xl font-bold text-white">Dokumen Pendirian & Perizinan Usaha</h3>
                 </div>
 
-
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                    <!-- Akta -->
-                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
-
+                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition duration-300 hover:-translate-y-1 shadow-lg" data-aos="fade-up" data-aos-delay="100">
                         <div class="w-14 h-14 rounded-xl bg-burgundy/20 text-burgundy flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-file-signature"></i>
                         </div>
-
-                        <h4 class="text-xl font-bold text-white mb-3">
-                            Akta Pendirian
-                        </h4>
-
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            No. 14 / 06-12-2022
-                        </p>
-
+                        <h4 class="text-xl font-bold text-white mb-3">Akta Pendirian</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">No. 14 / 06-12-2022</p>
                     </div>
 
-
-                    <!-- NIB -->
-                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
-
+                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition duration-300 hover:-translate-y-1 shadow-lg" data-aos="fade-up" data-aos-delay="200">
                         <div class="w-14 h-14 rounded-xl bg-warmBrown/20 text-warmBronze flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-building"></i>
                         </div>
-
-                        <h4 class="text-xl font-bold text-white mb-3">
-                            Nomor Induk Berusaha
-                        </h4>
-
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            NIB: 1612220045876
-                        </p>
-
+                        <h4 class="text-xl font-bold text-white mb-3">Nomor Induk Berusaha</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">NIB: 1612220045876</p>
                     </div>
 
-
-                    <!-- NPWP -->
-                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-burgundy transition">
-
+                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-burgundy transition duration-300 hover:-translate-y-1 shadow-lg" data-aos="fade-up" data-aos-delay="300">
                         <div class="w-14 h-14 rounded-xl bg-burgundy/20 text-burgundy flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-receipt"></i>
                         </div>
-
-                        <h4 class="text-xl font-bold text-white mb-3">
-                            NPWP
-                        </h4>
-
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            0620 1850 9040 1000
-                        </p>
-
+                        <h4 class="text-xl font-bold text-white mb-3">NPWP</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">0620 1850 9040 1000</p>
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- SERTIFIKASI -->
         <section class="py-24 bg-navyDark border-t border-slate-800">
-
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div class="reveal text-center max-w-3xl mx-auto mb-16">
-
-                    <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">
-                        Kompetensi & Sertifikasi
-                    </h2>
-
-                    <h3 class="text-3xl sm:text-4xl font-bold text-white">
-                        Sertifikasi Kualifikasi & Pelatihan
-                    </h3>
-
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">Kompetensi & Sertifikasi</h2>
+                    <h3 class="text-3xl sm:text-4xl font-bold text-white">Sertifikasi Kualifikasi & Pelatihan</h3>
                 </div>
 
-
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                    <!-- Gada Utama -->
-                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
-
+                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition duration-300 hover:-translate-y-1 shadow-lg" data-aos="fade-up" data-aos-delay="100">
                         <div class="w-14 h-14 rounded-xl bg-warmBrown/20 text-warmBronze flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-shield-halved"></i>
                         </div>
-
-                        <h4 class="text-xl font-bold text-white mb-3">
-                            Gada Utama Keamanan
-                        </h4>
-
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Kualifikasi profesional di bidang satuan pengamanan.
-                        </p>
-
+                        <h4 class="text-xl font-bold text-white mb-3">Gada Utama Keamanan</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Kualifikasi profesional di bidang satuan pengamanan.</p>
                     </div>
 
-
-                    <!-- LA LPK -->
-                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-burgundy transition">
-
+                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-burgundy transition duration-300 hover:-translate-y-1 shadow-lg" data-aos="fade-up" data-aos-delay="200">
                         <div class="w-14 h-14 rounded-xl bg-burgundy/20 text-burgundy flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-certificate"></i>
                         </div>
-
-                        <h4 class="text-xl font-bold text-white mb-3">
-                            Akreditasi LA LPK
-                        </h4>
-
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            No. 555/LALPK/XII/2024
-                        </p>
-
+                        <h4 class="text-xl font-bold text-white mb-3">Akreditasi LA LPK</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">No. 555/LALPK/XII/2024</p>
                     </div>
 
-
-                    <!-- TOT -->
-                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
-
+                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition duration-300 hover:-translate-y-1 shadow-lg" data-aos="fade-up" data-aos-delay="300">
                         <div class="w-14 h-14 rounded-xl bg-warmBrown/20 text-warmBronze flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-chalkboard-user"></i>
                         </div>
-
-                        <h4 class="text-xl font-bold text-white mb-3">
-                            Training of Trainer Cluster
-                        </h4>
-
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            No. 0246/BASS/VII/2022
-                        </p>
-
+                        <h4 class="text-xl font-bold text-white mb-3">Training of Trainer Cluster</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">No. 0246/BASS/VII/2022</p>
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- ISO -->
         <section class="py-24 bg-slate-900 border-t border-slate-800">
-
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div class="reveal text-center max-w-3xl mx-auto mb-16">
-
-                    <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">
-                        Standar Manajemen
-                    </h2>
-
-                    <h3 class="text-3xl sm:text-4xl font-bold text-white">
-                        Sertifikasi Manajemen Mutu Standar ISO
-                    </h3>
-
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">Standar Manajemen</h2>
+                    <h3 class="text-3xl sm:text-4xl font-bold text-white">Sertifikasi Manajemen Mutu Standar ISO</h3>
                 </div>
 
-
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                    <!-- ISO 9001 -->
-                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
-
+                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition duration-300 hover:-translate-y-1 shadow-lg" data-aos="flip-left" data-aos-delay="100">
                         <div class="w-14 h-14 rounded-xl bg-warmBrown/20 text-warmBronze flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-gears"></i>
                         </div>
-
-                        <h4 class="text-xl font-bold text-white mb-3">
-                            ISO 9001:2015
-                        </h4>
-
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Quality Management System
-                        </p>
-
+                        <h4 class="text-xl font-bold text-white mb-3">ISO 9001:2015</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Quality Management System</p>
                     </div>
 
-
-                    <!-- ISO 37001 -->
-                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-burgundy transition">
-
+                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-burgundy transition duration-300 hover:-translate-y-1 shadow-lg" data-aos="flip-left" data-aos-delay="200">
                         <div class="w-14 h-14 rounded-xl bg-burgundy/20 text-burgundy flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-scale-balanced"></i>
                         </div>
-
-                        <h4 class="text-xl font-bold text-white mb-3">
-                            ISO 37001:2016
-                        </h4>
-
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Anti-Bribery Management System
-                        </p>
-
+                        <h4 class="text-xl font-bold text-white mb-3">ISO 37001:2016</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Anti-Bribery Management System</p>
                     </div>
 
-
-                    <!-- ISO 45001 -->
-                    <div class="reveal bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition">
-
+                    <div class="bg-navyCard p-8 rounded-2xl border border-slate-800 hover:border-warmBrown/50 transition duration-300 hover:-translate-y-1 shadow-lg" data-aos="flip-left" data-aos-delay="300">
                         <div class="w-14 h-14 rounded-xl bg-warmBrown/20 text-warmBronze flex items-center justify-center text-2xl mb-6">
                             <i class="fa-solid fa-helmet-safety"></i>
                         </div>
-
-                        <h4 class="text-xl font-bold text-white mb-3">
-                            ISO 45001:2016
-                        </h4>
-
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Occupational Health & Safety
-                        </p>
-
+                        <h4 class="text-xl font-bold text-white mb-3">ISO 45001:2016</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Occupational Health & Safety</p>
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- MITRA PERLINDUNGAN -->
         <section class="py-24 bg-navyDark border-t border-slate-800">
-
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div class="reveal text-center max-w-3xl mx-auto mb-10">
-
-                    <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">
-                        Perlindungan Tenaga Kerja
-                    </h2>
-
-                    <h3 class="text-3xl sm:text-4xl font-bold text-white">
-                        Mitra Perlindungan Tenaga Kerja
-                    </h3>
-
+                <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">Perlindungan Tenaga Kerja</h2>
+                    <h3 class="text-3xl sm:text-4xl font-bold text-white">Mitra Perlindungan Tenaga Kerja</h3>
                     <p class="text-slate-400 mt-4 leading-relaxed">
-                        Setiap personil dan tenaga kerja alih daya PT. Hasna Jaya Sejahtera
-                        terdaftar secara resmi dalam jaminan perlindungan sosial dan kesehatan.
+                        Setiap personil dan tenaga kerja alih daya PT. Hasna Jaya Sejahtera terdaftar secara resmi dalam jaminan perlindungan sosial dan kesehatan.
                     </p>
-
                 </div>
 
-
-                <!-- LOGO MITRA & SERTIFIKASI -->
-                <div class="flex justify-center pt-4">
-
-                    <div class="bg-slate-900/60 p-5 sm:p-6 rounded-2xl border border-warmBrown/20 shadow-xl w-full">
-
-                        <div class="flex flex-wrap justify-center items-center gap-3">
-
-                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
-                                <img
-                                    src="bpjs-kesehatan.png"
-                                    alt="BPJS Kesehatan"
-                                    loading="lazy"
-                                    class="h-8 sm:h-[2.6rem] md:h-[3.25rem] w-auto object-contain"
-                                >
-                            </div>
-
-                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
-                                <img
-                                    src="bpjs-ketenagakerjaan.png"
-                                    alt="BPJS Ketenagakerjaan"
-                                    loading="lazy"
-                                    class="h-6 sm:h-8 md:h-10 w-auto object-contain"
-                                >
-                            </div>
-
-                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
-                                <img
-                                    src="kemnaker.jpg"
-                                    alt="Kementerian Ketenagakerjaan Republik Indonesia"
-                                    loading="lazy"
-                                    class="h-10 sm:h-[3.25rem] md:h-16 w-auto object-contain"
-                                >
-                            </div>
-
-                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
-                                <img
-                                    src="kadin.jpg"
-                                    alt="KADIN DKI Jakarta"
-                                    loading="lazy"
-                                    class="h-10 sm:h-[3.25rem] md:h-16 w-auto object-contain"
-                                >
-                            </div>
-
-                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
-                                <img
-                                    src="gemah-ripah.jpg"
-                                    alt="Gemah Ripah Wibawa Mukti"
-                                    loading="lazy"
-                                    class="h-[2.1rem] sm:h-11 md:h-14 w-auto object-contain"
-                                >
-                            </div>
-
-                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
-                                <img
-                                    src="iso_transparan.png"
-                                    alt="Sertifikasi ISO 9001:2015, ISO 45001:2016, dan ISO 37001:2016"
-                                    loading="lazy"
-                                    class="h-8 sm:h-[2.6rem] md:h-[3.25rem] w-auto object-contain"
-                                >
-                            </div>
-
-                            <div class="reveal bg-white rounded-lg p-2 flex items-center justify-center shadow-md transition-transform duration-300 hover:-translate-y-1">
-                                <img
-                                    src="asosiasi.jpg"
-                                    alt="Asosiasi Perusahaan Klining Servis Indonesia"
-                                    loading="lazy"
-                                    class="h-10 sm:h-[3.25rem] md:h-16 w-auto object-contain"
-                                >
-                            </div>
-
-                        </div>
-
+                <div class="flex justify-center pt-4" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="bg-slate-900/60 p-6 sm:p-8 rounded-2xl border border-warmBrown/20 shadow-xl w-full">
+                        <img src="legalitas.png" alt="Mitra Perlindungan Tenaga Kerja PT Hasna Jaya Sejahtera" class="w-full max-w-4xl mx-auto h-auto object-contain rounded-xl">
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
     </main>
-
 
     <!-- FOOTER -->
     <footer class="bg-navyDark text-slate-300 border-t border-warmBrown/30 pt-16 pb-8">
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-duration="800">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
-
-                <!-- Info Perusahaan -->
                 <div class="space-y-4">
-
-                    <img src="logo.png"
-                         alt="PT Hasna Jaya Sejahtera"
-                         class="h-16 w-auto">
-
+                    <img src="logo.png" alt="PT Hasna Jaya Sejahtera" class="h-12 w-auto">
                     <p class="text-sm text-slate-400 leading-relaxed">
-                        PT. Hasna Jaya Sejahtera siap menjadi mitra kerja terbaik Anda
-                        dalam memenuhi kebutuhan tenaga kerja berkualitas.
+                        PT. Hasna Jaya Sejahtera siap menjadi mitra kerja terbaik Anda dalam memenuhi kebutuhan tenaga kerja berkualitas.
                     </p>
-
                 </div>
 
-
-                <!-- Lokasi -->
                 <div class="space-y-3">
-
-                    <h5 class="text-white font-bold text-base mb-2 border-b border-warmBrown/30 pb-1 inline-block">
-                        Lokasi Kantor
-                    </h5>
-
-                    <p class="text-xs text-slate-300">
-                        <strong class="text-warmBronze">
-                            Kantor Pusat (Serang):
-                        </strong>
-                        <br>
-                        Jl. Garuda No.184, Panancangan, Cipocok Jaya,
-                        Kota Serang - Banten.
-                    </p>
-
-                    <p class="text-xs text-slate-300">
-                        <strong class="text-warmBronze">
-                            Kantor Cabang (Bandung):
-                        </strong>
-                        <br>
-                        Jl. Kawung Ece No.15, Bandung.
-                    </p>
-
+                    <h5 class="text-white font-bold text-base mb-2 border-b border-warmBrown/30 pb-1 inline-block">Lokasi Kantor</h5>
+                    <p class="text-xs text-slate-300"><strong class="text-warmBronze">Kantor Pusat (Serang):</strong><br>
+                    Jl. Garuda No.184, Panancangan, Cipocok Jaya, Kota Serang - Banten.</p>
+                    <p class="text-xs text-slate-300"><strong class="text-warmBronze">Kantor Cabang (Bandung):</strong><br>
+                    Jl. Kawung Ece No.15, Bandung.</p>
                 </div>
 
-
-                <!-- Kontak -->
                 <div class="space-y-3">
-
-                    <h5 class="text-white font-bold text-base mb-2 border-b border-warmBrown/30 pb-1 inline-block">
-                        Hubungi Kami
-                    </h5>
-
-                    <p class="text-xs text-slate-300">
-                        <i class="fa-solid fa-phone text-warmBronze mr-2"></i>
-                        081-1125-101 / 0821 2991 5466
-                    </p>
-
-                    <p class="text-xs text-slate-300">
-                        <i class="fa-brands fa-whatsapp text-green-500 mr-2"></i>
-                        0812 2255 977 / 0878 5748 9823
-                    </p>
-
-                    <p class="text-xs text-slate-300">
-                        <i class="fa-solid fa-envelope text-burgundy mr-2"></i>
-                        hasnajayabandung@gmail.com
-                    </p>
-
+                    <h5 class="text-white font-bold text-base mb-2 border-b border-warmBrown/30 pb-1 inline-block">Hubungi Kami</h5>
+                    <p class="text-xs text-slate-300"><i class="fa-solid fa-phone text-warmBronze mr-2"></i> 081-1125-101 / 0821 2991 5466</p>
+                    <p class="text-xs text-slate-300"><i class="fa-brands fa-whatsapp text-green-500 mr-2"></i> 0812 2255 977 / 0878 5748 9823</p>
+                    <p class="text-xs text-slate-300"><i class="fa-solid fa-envelope text-burgundy mr-2"></i> hasnajayabandung@gmail.com</p>
                 </div>
-
             </div>
 
-
-            <!-- Copyright -->
             <div class="pt-8 text-center text-xs text-slate-500">
-
-                <p>
-                    &copy; 2026 PT. Hasna Jaya Sejahtera. All rights reserved.
-                </p>
-
+                <p>&copy; 2026 PT. Hasna Jaya Sejahtera. All rights reserved.</p>
             </div>
-
         </div>
-
     </footer>
 
-
-    <!-- JAVASCRIPT MOBILE MENU -->
+    <!-- AOS SCRIPT -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        AOS.init({ duration: 900, easing: 'ease-in-out', once: true, offset: 120 });
 
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
         menuBtn.addEventListener('click', () => {
-
             const isOpening = mobileMenu.classList.contains('hidden');
-
             mobileMenu.classList.toggle('hidden');
-
-            menuBtn.setAttribute(
-                'aria-expanded',
-                String(isOpening)
-            );
-
+            menuBtn.setAttribute('aria-expanded', String(isOpening));
         });
-
 
         mobileMenu.querySelectorAll('a').forEach((link) => {
-
             link.addEventListener('click', () => {
-
                 mobileMenu.classList.add('hidden');
-
-                menuBtn.setAttribute(
-                    'aria-expanded',
-                    'false'
-                );
-
+                menuBtn.setAttribute('aria-expanded', 'false');
             });
-
         });
-
     </script>
-
-
-    <script>
-        // Animasi muncul: pertama kali dibuka dan setiap elemen masuk layar saat di-scroll
-        (function () {
-            const items = document.querySelectorAll('.reveal');
-            if (!items.length) return;
-
-            // Jeda bertingkat (stagger) untuk elemen bersaudara: 0, 80, 160 ms, dst.
-            const seen = new Map();
-            items.forEach((el) => {
-                const i = seen.get(el.parentElement) || 0;
-                el.style.setProperty('--d', Math.min(i, 6) * 80 + 'ms');
-                seen.set(el.parentElement, i + 1);
-            });
-
-            if (!('IntersectionObserver' in window)) {
-                items.forEach((el) => el.classList.add('is-visible'));
-                return;
-            }
-
-            const io = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    // tampil kalau masuk layar, atau kalau sudah terlewat (mis. reload di tengah halaman)
-                    if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
-                        entry.target.classList.add('is-visible');
-                        io.unobserve(entry.target);   // sekali saja, tidak berulang
-                    }
-                });
-            }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-
-            items.forEach((el) => io.observe(el));
-        })();
-    </script>
-
 </body>
 </html>
