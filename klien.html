@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mitra Kerja & Klien Terpercaya - PT. Hasna Jaya Sejahtera</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navyDark: '#0B192C',
+                        navyCard: '#1E2A38',
+                        burgundy: '#800020',
+                        burgundyHover: '#600018',
+                        warmBrown: '#8B5E3C',
+                        warmBronze: '#A67C52',
+                    },
+                    animation: {
+                        'marquee-left': 'marqueeLeft 30s linear infinite',
+                        'marquee-right': 'marqueeRight 30s linear infinite',
+                    },
+                    keyframes: {
+                        marqueeLeft: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        marqueeRight: {
+                            '0%': { transform: 'translateX(-50%)' },
+                            '100%': { transform: 'translateX(0%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-sans antialiased overflow-x-hidden">
+
+    <!-- NAVBAR FIXED -->
+    <nav class="fixed top-0 left-0 w-full bg-navyDark/90 backdrop-blur-md z-50 border-b border-warmBrown/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="PT Hasna Jaya Sejahtera Logo" class="h-10 sm:h-12 md:h-14 w-auto object-contain">
+                <span class="font-bold text-lg sm:text-xl tracking-wide text-white">
+                    PT. HASNA JAYA SEJAHTERA
+                </span>
+            </a>
+
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-warmBronze transition">Beranda</a>
+                <a href="index.html#tentang" class="hover:text-warmBronze transition">Tentang Kami</a>
+                <a href="index.html#layanan" class="hover:text-warmBronze transition">Layanan</a>
+                <a href="index.html#keunggulan" class="hover:text-warmBronze transition">Keunggulan</a>
+                <a href="legalitas.html" class="hover:text-warmBronze transition">Legalitas</a>
+                <a href="klien.html" class="text-warmBronze font-semibold border-b-2 border-warmBronze pb-1">Klien</a>
+                <a href="index.html#kontak" class="bg-burgundy hover:bg-burgundyHover text-white px-5 py-2.5 rounded-full font-semibold transition shadow-lg shadow-burgundy/30">
+                    Hubungi Kami
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" type="button" aria-label="Buka menu navigasi" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navyDark border-b border-warmBrown/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block hover:text-warmBronze transition">Beranda</a>
+            <a href="index.html#tentang" class="block hover:text-warmBronze transition">Tentang Kami</a>
+            <a href="index.html#layanan" class="block hover:text-warmBronze transition">Layanan</a>
+            <a href="index.html#keunggulan" class="block hover:text-warmBronze transition">Keunggulan</a>
+            <a href="legalitas.html" class="block hover:text-warmBronze transition">Legalitas</a>
+            <a href="klien.html" class="block text-warmBronze font-semibold">Klien</a>
+            <a href="index.html#kontak" class="inline-block bg-burgundy hover:bg-burgundyHover text-white px-5 py-2 rounded-full font-semibold mt-2">
+                Hubungi Kami
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (SLIDER BACKGROUND) -->
+    <header class="relative isolate overflow-hidden bg-navyDark pt-20 min-h-[500px] flex items-center">
+        <div class="absolute inset-0 -z-20 overflow-hidden">
+            <div id="hero-bg-1" class="absolute inset-0 transition-opacity duration-1000 opacity-100 bg-cover bg-center" style="background-image: url('assets/logo/perkantoran.jpg');"></div>
+            <div id="hero-bg-2" class="absolute inset-0 transition-opacity duration-1000 opacity-0 bg-cover bg-center" style="background-image: url('assets/logo/mall.jpg');"></div>
+            <div id="hero-bg-3" class="absolute inset-0 transition-opacity duration-1000 opacity-0 bg-cover bg-center" style="background-image: url('assets/logo/pabrik.jpg');"></div>
+        </div>
+
+        <div class="absolute inset-0 -z-10 bg-gradient-to-r from-navyDark via-navyDark/90 via-50% to-navyDark/40"></div>
+        <div class="absolute inset-0 -z-10 bg-navyDark/30"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 sm:py-20">
+            <div class="max-w-2xl space-y-6" data-aos="fade-right" data-aos-duration="1200">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-burgundy/30 border border-burgundy text-warmBronze text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                    <i class="fa-solid fa-handshake"></i> Kepercayaan & Kemitraan
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight tracking-tight">
+                    Mitra Kerja & <span class="text-warmBronze">Klien Terpercaya</span>
+                </h1>
+                <p class="max-w-xl text-base sm:text-lg text-slate-300 leading-relaxed">
+                    Kebanggaan PT. Hasna Jaya Sejahtera yang telah dipercaya oleh berbagai industri terkemuka dalam menyajikan solusi pengelolaan tenaga kerja & fasilitas terbaik.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- KEY METRICS BAR -->
+    <section class="bg-navyCard border-y border-slate-800 py-8 relative z-10 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="p-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-warmBronze mb-1">19+</div>
+                    <div class="text-sm text-slate-300 font-medium">Perusahaan Mitra</div>
+                </div>
+                <div class="p-4 border-t md:border-t-0 md:border-l border-slate-700/60" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-warmBronze mb-1">8+</div>
+                    <div class="text-sm text-slate-300 font-medium">Kota/Wilayah Operasional</div>
+                </div>
+                <div class="p-4 border-t md:border-t-0 md:border-l border-slate-700/60" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-warmBronze mb-1">100%</div>
+                    <div class="text-sm text-slate-300 font-medium">Komitmen Layanan Berkelanjutan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- NARASI & PENGANTAR MITRA INDUSTRI -->
+        <section class="py-16 bg-slate-900 border-b border-slate-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">
+                    Telah Dipercaya oleh Berbagai Mitra Industri Strategis
+                </h2>
+                <p class="text-lg text-slate-200 font-semibold mb-4 leading-relaxed">
+                    "Sebagai penyedia layanan pengelolaan fasilitas, sistem keamanan, dan dukungan operasional terpadu, keberhasilan kami diukur dari kepercayaan penuh yang diberikan oleh para mitra kerja."
+                </p>
+                <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                    Kami bangga telah menjadi bagian penting dalam mendukung stabilitas serta efisiensi operasional berbagai perusahaan lintas industri di Indonesia—mulai dari manufaktur, pusat perbelanjaan, hingga area perkantoran modern. Komitmen kami untuk menyajikan standar pelayanan terbaik, ketepatan pengelolaan tenaga kerja, serta penerapan regulasi K3L yang ketat telah mendorong terciptanya hubungan kerja sama yang solid dan berkelanjutan dari tahun ke tahun.
+                </p>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE CATEGORY FILTER & LIST KLIEN -->
+        <section class="py-20 bg-navyDark">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-10" data-aos="fade-up">
+                    <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">Portofolio Kemitraan</h2>
+                    <h3 class="text-3xl sm:text-4xl font-bold text-white">Daftar Klien Strategis</h3>
+                </div>
+
+                <!-- Filter Category Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12" data-aos="fade-up">
+                    <button onclick="filterKlien('all')" class="filter-btn active bg-burgundy text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all hover:bg-burgundyHover border border-burgundy">
+                        Semua Klien (19)
+                    </button>
+                    <button onclick="filterKlien('manufaktur')" class="filter-btn bg-navyCard text-slate-300 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all hover:text-white hover:border-warmBrown/60 border border-slate-800">
+                        Manufaktur & Industri
+                    </button>
+                    <button onclick="filterKlien('properti')" class="filter-btn bg-navyCard text-slate-300 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all hover:text-white hover:border-warmBrown/60 border border-slate-800">
+                        Properti, Mall & Commercial
+                    </button>
+                    <button onclick="filterKlien('tekstil')" class="filter-btn bg-navyCard text-slate-300 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all hover:text-white hover:border-warmBrown/60 border border-slate-800">
+                        Tekstil & Olahan
+                    </button>
+                    <button onclick="filterKlien('pangan')" class="filter-btn bg-navyCard text-slate-300 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all hover:text-white hover:border-warmBrown/60 border border-slate-800">
+                        Peternakan & Pangan
+                    </button>
+                </div>
+
+                <!-- List View Container -->
+                <div class="space-y-4" id="klien-list-container">
+                    <div class="klien-item manufaktur bg-navyCard p-5 sm:p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-warmBrown/50 hover:shadow-lg" data-aos="fade-up">
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-white">PT. Barell Utama Indonesia</h4>
+                            <p class="text-xs sm:text-sm text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-warmBronze"></i> Karawang, Jawa Barat
+                            </p>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-warmBrown/30 text-warmBronze text-xs font-semibold">2022 - Sekarang</span>
+                        </div>
+                    </div>
+
+                    <div class="klien-item pangan bg-navyCard p-5 sm:p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-warmBrown/50 hover:shadow-lg" data-aos="fade-up">
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-white">PT. Charoen Pokphand Indonesia</h4>
+                            <p class="text-xs sm:text-sm text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-warmBronze"></i> Banten & Jawa Barat
+                            </p>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-warmBrown/30 text-warmBronze text-xs font-semibold">2021 - Sekarang</span>
+                        </div>
+                    </div>
+
+                    <div class="klien-item pangan bg-navyCard p-5 sm:p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-warmBrown/50 hover:shadow-lg" data-aos="fade-up">
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-white">PT. Indochicken Mandiri</h4>
+                            <p class="text-xs sm:text-sm text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-warmBronze"></i> Kendal, Jawa Tengah
+                            </p>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-warmBrown/30 text-warmBronze text-xs font-semibold">2023 - Sekarang</span>
+                        </div>
+                    </div>
+
+                    <div class="klien-item tekstil bg-navyCard p-5 sm:p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-warmBrown/50 hover:shadow-lg" data-aos="fade-up">
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-white">PT. Indo Pasifik Industri</h4>
+                            <p class="text-xs sm:text-sm text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-warmBronze"></i> Majalengka, Jawa Barat
+                            </p>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-warmBrown/30 text-warmBronze text-xs font-semibold">2022 - Sekarang</span>
+                        </div>
+                    </div>
+
+                    <div class="klien-item properti bg-navyCard p-5 sm:p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-warmBrown/50 hover:shadow-lg" data-aos="fade-up">
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-white">Mall Kelapa Gading</h4>
+                            <p class="text-xs sm:text-sm text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-warmBronze"></i> Jakarta Utara
+                            </p>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-warmBrown/30 text-warmBronze text-xs font-semibold">2020 - Sekarang</span>
+                        </div>
+                    </div>
+
+                    <div class="klien-item properti bg-navyCard p-5 sm:p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-warmBrown/50 hover:shadow-lg" data-aos="fade-up">
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-white">Summarecon Mall Serpong</h4>
+                            <p class="text-xs sm:text-sm text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-warmBronze"></i> Tangerang, Banten
+                            </p>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-warmBrown/30 text-warmBronze text-xs font-semibold">2021 - Sekarang</span>
+                        </div>
+                    </div>
+
+                    <div class="klien-item manufaktur bg-navyCard p-5 sm:p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-warmBrown/50 hover:shadow-lg" data-aos="fade-up">
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-white">PT. Maccaferri Indonesia</h4>
+                            <p class="text-xs sm:text-sm text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-warmBronze"></i> Kebumen, Jawa Tengah
+                            </p>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-warmBrown/30 text-warmBronze text-xs font-semibold">2023 - Sekarang</span>
+                        </div>
+                    </div>
+
+                    <div class="klien-item pangan bg-navyCard p-5 sm:p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-warmBrown/50 hover:shadow-lg" data-aos="fade-up">
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-white">PT. Kalidu Parama Industri (Nabati Group)</h4>
+                            <p class="text-xs sm:text-sm text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-warmBronze"></i> Bandung & Sumedang
+                            </p>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-warmBrown/30 text-warmBronze text-xs font-semibold">2022 - Sekarang</span>
+                        </div>
+                    </div>
+
+                    <div class="klien-item pangan bg-navyCard p-5 sm:p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-warmBrown/50 hover:shadow-lg" data-aos="fade-up">
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-white">PT. Sido Agung Agro Prima</h4>
+                            <p class="text-xs sm:text-sm text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-warmBronze"></i> Pemalang, Jawa Tengah
+                            </p>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-warmBrown/30 text-warmBronze text-xs font-semibold">2022 - Sekarang</span>
+                        </div>
+                    </div>
+
+                    <div class="klien-item tekstil bg-navyCard p-5 sm:p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-warmBrown/50 hover:shadow-lg" data-aos="fade-up">
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-white">PT. Springs Indonesia</h4>
+                            <p class="text-xs sm:text-sm text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-warmBronze"></i> Garut, Jawa Barat
+                            </p>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-warmBrown/30 text-warmBronze text-xs font-semibold">2021 - Sekarang</span>
+                        </div>
+                    </div>
+
+                    <div class="klien-item pangan bg-navyCard p-5 sm:p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-warmBrown/50 hover:shadow-lg" data-aos="fade-up">
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-white">PT. Stanli Indonesia</h4>
+                            <p class="text-xs sm:text-sm text-slate-400 flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-warmBronze"></i> Bandung, Jawa Barat
+                            </p>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-warmBrown/30 text-warmBronze text-xs font-semibold">2023 - Sekarang</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RUNNING LOGO KLIEN (INFINITE MARQUEE DUA ARAH) -->
+        <section class="py-16 bg-slate-900 border-t border-slate-800 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 mb-8 text-center">
+                <h3 class="text-xl font-bold text-slate-300">Logo Mitra Kerja Terkait</h3>
+            </div>
+
+            <!-- Baris Atas (Kanan ke Kiri) -->
+            <div class="flex overflow-hidden w-full mb-6 relative">
+                <div class="flex gap-8 animate-marquee-left whitespace-nowrap">
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/barell.png" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/charoen.jpg" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/indochicken.png" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/indo-pacifik.jpg" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/kelapa-gading.jpg" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/mall-serpong.jpg" class="max-h-12 w-auto object-contain"></div>
+                    
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/barell.png" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/charoen.jpg" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/indochicken.png" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/indo-pacifik.jpg" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/kelapa-gading.jpg" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/mall-serpong.jpg" class="max-h-12 w-auto object-contain"></div>
+                </div>
+            </div>
+
+            <!-- Baris Bawah (Kiri ke Kanan) -->
+            <div class="flex overflow-hidden w-full relative">
+                <div class="flex gap-8 animate-marquee-right whitespace-nowrap">
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/meccaferri.png" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/nabati.png" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/pabrik.jpg" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/sido-agung.jpg" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/springs.jpg" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/stanli.jpg" class="max-h-12 w-auto object-contain"></div>
+                    
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/meccaferri.png" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/nabati.png" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/pabrik.jpg" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/sido-agung.jpg" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/springs.jpg" class="max-h-12 w-auto object-contain"></div>
+                    <div class="bg-white/90 p-3 rounded-xl min-w-[140px] h-20 flex items-center justify-center"><img src="assets/logo/stanli.jpg" class="max-h-12 w-auto object-contain"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEBARAN WILAYAH -->
+        <section class="py-20 bg-navyDark border-t border-slate-800">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+                <h2 class="text-warmBronze font-bold tracking-wider uppercase text-sm mb-2">Jangkauan Layanan</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white mb-8">Sebaran Wilayah Operasional</h3>
+
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="px-4 py-2 rounded-full bg-navyCard border border-slate-700 text-slate-200 text-sm font-medium hover:border-warmBronze transition"><i class="fa-solid fa-map-pin text-warmBronze mr-2"></i>Bandung</span>
+                    <span class="px-4 py-2 rounded-full bg-navyCard border border-slate-700 text-slate-200 text-sm font-medium hover:border-warmBronze transition"><i class="fa-solid fa-map-pin text-warmBronze mr-2"></i>Sumedang</span>
+                    <span class="px-4 py-2 rounded-full bg-navyCard border border-slate-700 text-slate-200 text-sm font-medium hover:border-warmBronze transition"><i class="fa-solid fa-map-pin text-warmBronze mr-2"></i>Majalengka</span>
+                    <span class="px-4 py-2 rounded-full bg-navyCard border border-slate-700 text-slate-200 text-sm font-medium hover:border-warmBronze transition"><i class="fa-solid fa-map-pin text-warmBronze mr-2"></i>Pemalang</span>
+                    <span class="px-4 py-2 rounded-full bg-navyCard border border-slate-700 text-slate-200 text-sm font-medium hover:border-warmBronze transition"><i class="fa-solid fa-map-pin text-warmBronze mr-2"></i>Kebumen</span>
+                    <span class="px-4 py-2 rounded-full bg-navyCard border border-slate-700 text-slate-200 text-sm font-medium hover:border-warmBronze transition"><i class="fa-solid fa-map-pin text-warmBronze mr-2"></i>Kendal</span>
+                    <span class="px-4 py-2 rounded-full bg-navyCard border border-slate-700 text-slate-200 text-sm font-medium hover:border-warmBronze transition"><i class="fa-solid fa-map-pin text-warmBronze mr-2"></i>Garut</span>
+                    <span class="px-4 py-2 rounded-full bg-navyCard border border-slate-700 text-slate-200 text-sm font-medium hover:border-warmBronze transition"><i class="fa-solid fa-map-pin text-warmBronze mr-2"></i>Jakarta</span>
+                    <span class="px-4 py-2 rounded-full bg-navyCard border border-slate-700 text-slate-200 text-sm font-medium hover:border-warmBronze transition"><i class="fa-solid fa-map-pin text-warmBronze mr-2"></i>Karawang</span>
+                    <span class="px-4 py-2 rounded-full bg-navyCard border border-slate-700 text-slate-200 text-sm font-medium hover:border-warmBronze transition"><i class="fa-solid fa-map-pin text-warmBronze mr-2"></i>Banten</span>
+                    <span class="px-4 py-2 rounded-full bg-navyCard border border-slate-700 text-slate-200 text-sm font-medium hover:border-warmBronze transition"><i class="fa-solid fa-map-pin text-warmBronze mr-2"></i>Tangerang</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="py-20 bg-gradient-to-r from-burgundy via-navyCard to-navyDark relative overflow-hidden border-t border-slate-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="zoom-in">
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Siap Menjadi Mitra Bisnis Anda Berikutnya</h2>
+                <p class="text-slate-300 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
+                    Konsultasikan kebutuhan tenaga kerja dan pengelolaan fasilitas perusahaan Anda bersama tim profesional kami.
+                </p>
+                <a href="index.html#kontak" class="inline-flex items-center gap-3 bg-burgundy hover:bg-burgundyHover text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-xl shadow-burgundy/40 border border-burgundy">
+                    <i class="fa-solid fa-comments"></i> Konsultasi Gratis
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navyDark text-slate-300 border-t border-warmBrown/30 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
+                <div class="space-y-4">
+                    <img src="logo.png" alt="PT Hasna Jaya Sejahtera" class="h-16 w-auto">
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        PT. Hasna Jaya Sejahtera siap menjadi mitra kerja terbaik Anda dalam memenuhi kebutuhan tenaga kerja berkualitas.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <h5 class="text-white font-bold text-base mb-2 border-b border-warmBrown/30 pb-1 inline-block">Lokasi Kantor</h5>
+                    <p class="text-xs text-slate-300">
+                        <strong class="text-warmBronze">Kantor Pusat (Serang):</strong><br>
+                        Jl. Garuda No.184, Panancangan, Cipocok Jaya, Kota Serang - Banten.
+                    </p>
+                    <p class="text-xs text-slate-300">
+                        <strong class="text-warmBronze">Kantor Cabang (Bandung):</strong><br>
+                        Jl. Kawung Ece No.15, Bandung.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <h5 class="text-white font-bold text-base mb-2 border-b border-warmBrown/30 pb-1 inline-block">Hubungi Kami</h5>
+                    <p class="text-xs text-slate-300"><i class="fa-solid fa-phone text-warmBronze mr-2"></i> 081-1125-101 / 0821 2991 5466</p>
+                    <p class="text-xs text-slate-300"><i class="fa-brands fa-whatsapp text-green-500 mr-2"></i> 0812 2255 977 / 0878 5748 9823</p>
+                    <p class="text-xs text-slate-300"><i class="fa-solid fa-envelope text-burgundy mr-2"></i> hasnajayabandung@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="pt-8 text-center text-xs text-slate-500">
+                <p>© 2026 PT. Hasna Jaya Sejahtera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            const isOpening = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.setAttribute('aria-expanded', String(isOpening));
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Hero Background Slider Loop
+        let currentBg = 1;
+        setInterval(() => {
+            document.getElementById(`hero-bg-${currentBg}`).classList.add('opacity-0');
+            document.getElementById(`hero-bg-${currentBg}`).classList.remove('opacity-100');
+            
+            currentBg = currentBg === 3 ? 1 : currentBg + 1;
+            
+            document.getElementById(`hero-bg-${currentBg}`).classList.remove('opacity-0');
+            document.getElementById(`hero-bg-${currentBg}`).classList.add('opacity-100');
+        }, 5000);
+
+        // Filter Klien Category Function
+        function filterKlien(category) {
+            const items = document.querySelectorAll('.klien-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-burgundy', 'border-burgundy');
+                btn.classList.add('bg-navyCard', 'border-slate-800');
+            });
+
+            event.currentTarget.classList.add('active', 'bg-burgundy', 'border-burgundy');
+            event.currentTarget.classList.remove('bg-navyCard', 'border-slate-800');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 900,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 120
+        });
+    </script>
+
+</body>
+</html>
