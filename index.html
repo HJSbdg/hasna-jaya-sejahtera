@@ -163,82 +163,89 @@
                 </div>
             </div>
            
-<!-- Section Visi Misi & Nilai Perusahaan (Grid 2 Kolom) -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-12" data-aos="fade-up" data-aos-duration="1000">
+<!-- Section Visi Misi & Nilai Perusahaan (Layout Proposional) -->
+<div class="my-12 space-y-6" data-aos="fade-up" data-aos-duration="1000">
     
-    <!-- Kolom Kiri: Gambar Visi Misi dengan Glow (5/12 Lebar) -->
-    <div class="lg:col-span-5 relative">
-        <!-- Efek Glow Latar Belakang -->
-        <div class="absolute -inset-1.5 bg-gradient-to-r from-warmBronze/40 via-burgundy/30 to-warmBronze/40 rounded-3xl blur-xl opacity-75 animate-pulse"></div>
+    <!-- Baris Atas: Gambar (Lebih Besar/Jelas) + 3 Poin Utama -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        <!-- Container Gambar Utama -->
-        <div class="relative overflow-hidden rounded-2xl border border-warmBrown/50 shadow-2xl p-1 bg-gradient-to-br from-navyCard via-slate-900 to-burgundy/30 group">
-            <img src="visi-misi.jpg" alt="Visi dan Misi PT Hasna Jaya Sejahtera" class="w-full h-auto object-cover block rounded-xl">
-            <!-- Efek Shimmer/Kilatan Cahaya saat Hover -->
-            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none -skew-x-12"></div>
+        <!-- Kolom Kiri: Gambar Visi Misi (Lebar 6 Kolom Biar Tulisan Jelas) -->
+        <div class="lg:col-span-6 relative">
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-warmBronze/40 via-burgundy/30 to-warmBronze/40 rounded-3xl blur-xl opacity-75 animate-pulse"></div>
+            
+            <div class="relative overflow-hidden rounded-2xl border border-warmBrown/50 shadow-2xl p-1.5 bg-gradient-to-br from-navyCard via-slate-900 to-burgundy/30 group">
+                <img src="visi-misi.jpg" alt="Visi dan Misi PT Hasna Jaya Sejahtera" class="w-full h-auto object-cover block rounded-xl">
+                <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none -skew-x-12"></div>
+            </div>
         </div>
+
+        <!-- Kolom Kanan: 3 Poin Pertama (Sejajar Tinggi Gambar) -->
+        <div class="lg:col-span-6 space-y-3.5">
+            <h4 class="text-xs font-bold uppercase tracking-widest text-warmBronze mb-2">Nilai-Nilai Utama</h4>
+            
+            <!-- 01 FOKUS -->
+            <div class="p-4 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
+                <div class="flex items-start gap-3.5">
+                    <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">01</span>
+                    <div>
+                        <h5 class="text-sm font-bold text-white uppercase tracking-wider">FOKUS</h5>
+                        <p class="text-xs text-slate-300 mt-1 leading-relaxed">Menggunakan seluruh kemampuan dan kompetensi Perusahaan secara optimal untuk meningkatkan nilai tambah Perusahaan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 02 INTEGRITAS -->
+            <div class="p-4 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
+                <div class="flex items-start gap-3.5">
+                    <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">02</span>
+                    <div>
+                        <h5 class="text-sm font-bold text-white uppercase tracking-wider">INTEGRITAS</h5>
+                        <p class="text-xs text-slate-300 mt-1 leading-relaxed">Mampu mewujudkan komitmen ke dalam tindakan yang nyata.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 03 VISIONARY -->
+            <div class="p-4 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
+                <div class="flex items-start gap-3.5">
+                    <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">03</span>
+                    <div>
+                        <h5 class="text-sm font-bold text-white uppercase tracking-wider">VISIONARY</h5>
+                        <p class="text-xs text-slate-300 mt-1 leading-relaxed">Mengantisipasi lingkungan usaha yang berkembang saat ini maupun yang akan datang untuk tumbuh berkembang.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Kolom Kanan: Value & Nilai Utama Perusahaan (7/12 Lebar) -->
-    <div class="lg:col-span-7 space-y-3">
-        <h4 class="text-xs font-bold uppercase tracking-widest text-warmBronze mb-2">Nilai-Nilai Utama</h4>
+    <!-- Baris Bawah: 2 Poin Sisanya (Melebar Rapi di Bawah) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
         
-        <!-- Item 1: FOKUS -->
-        <div class="p-3.5 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
-            <div class="flex items-start gap-3">
-                <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">01</span>
-                <div>
-                    <h5 class="text-sm font-bold text-white uppercase tracking-wider">FOKUS</h5>
-                    <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">Menggunakan seluruh kemampuan dan kompetensi Perusahaan secara optimal untuk meningkatkan nilai tambah Perusahaan.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Item 2: INTEGRITAS -->
-        <div class="p-3.5 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
-            <div class="flex items-start gap-3">
-                <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">02</span>
-                <div>
-                    <h5 class="text-sm font-bold text-white uppercase tracking-wider">INTEGRITAS</h5>
-                    <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">Mampu mewujudkan komitmen ke dalam tindakan yang nyata.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Item 3: VISIONARY -->
-        <div class="p-3.5 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
-            <div class="flex items-start gap-3">
-                <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">03</span>
-                <div>
-                    <h5 class="text-sm font-bold text-white uppercase tracking-wider">VISIONARY</h5>
-                    <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">Mengantisipasi lingkungan usaha yang berkembang saat ini maupun yang akan datang untuk tumbuh berkembang.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Item 4: EXCELLENCE -->
-        <div class="p-3.5 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
-            <div class="flex items-start gap-3">
+        <!-- 04 EXCELLENCE -->
+        <div class="p-4 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
+            <div class="flex items-start gap-3.5">
                 <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">04</span>
                 <div>
                     <h5 class="text-sm font-bold text-white uppercase tracking-wider">EXCELLENCE</h5>
-                    <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">Menampilkan yang terbaik dari segala aspek pengelolaan usaha.</p>
+                    <p class="text-xs text-slate-300 mt-1 leading-relaxed">Menampilkan yang terbaik dari segala aspek pengelolaan usaha.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Item 5: MUTUAL RESPECT -->
-        <div class="p-3.5 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
-            <div class="flex items-start gap-3">
+        <!-- 05 MUTUAL RESPECT -->
+        <div class="p-4 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
+            <div class="flex items-start gap-3.5">
                 <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">05</span>
                 <div>
                     <h5 class="text-sm font-bold text-white uppercase tracking-wider">MUTUAL RESPECT</h5>
-                    <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">Menempatkan semua pihak yang saling terkait setara dalam kegiatan usaha.</p>
+                    <p class="text-xs text-slate-300 mt-1 leading-relaxed">Menempatkan semua pihak yang saling terkait setara dalam kegiatan usaha.</p>
                 </div>
             </div>
         </div>
 
     </div>
+
 </div>
     </section>
 
