@@ -6,23 +6,32 @@
     <title>PT. Hasna Jaya Sejahtera - Your Workforce Our Commitment</title>
     
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navyDark: '#0B192C',
-                        navyCard: '#1E2A38',
-                        burgundy: '#800020',
-                        burgundyHover: '#600018',
-                        warmBrown: '#8B5E3C',
-                        warmBronze: '#A67C52',
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    navyDark: '#0B192C',
+                    navyCard: '#1E2A38',
+                    burgundy: '#800020',
+                    burgundyHover: '#600018',
+                    warmBrown: '#8B5E3C',
+                    warmBronze: '#A67C52',
+                },
+                keyframes: {
+                    sweep: {
+                        '0%': { transform: 'translateX(-100%) skewX(-12deg)' },
+                        '30%, 100%': { transform: 'translateX(200%) skewX(-12deg)' }
                     }
+                },
+                animation: {
+                    'light-sweep': 'sweep 4s infinite ease-in-out'
                 }
             }
         }
-    </script>
+    }
+</script>
     
     <!-- FontAwesome & AOS CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -175,7 +184,7 @@
             
             <div class="relative overflow-hidden rounded-2xl border border-warmBrown/50 shadow-2xl p-1.5 bg-gradient-to-br from-navyCard via-slate-900 to-burgundy/30 group">
                 <img src="visi-misi.jpg" alt="Visi dan Misi PT Hasna Jaya Sejahtera" class="w-full h-auto object-cover block rounded-xl">
-                <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none -skew-x-12"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none animate-light-sweep"></div>
             </div>
         </div>
 
@@ -186,7 +195,11 @@
             <!-- 01 FOKUS -->
             <div class="p-4 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
                 <div class="flex items-start gap-3.5">
-                    <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">01</span>
+                    <!-- Contoh Ganti di Nomor 01 (Lakukan hal yang sama untuk 02-05) -->
+<!-- Contoh Ganti di Nomor 01 (Lakukan hal yang sama untuk 02-05) -->
+<span class="px-3 py-1 text-[11px] font-extrabold bg-warmBronze/20 text-warmBronze rounded-tl-xl rounded-br-xl rounded-tr-xs rounded-bl-xs border border-warmBronze/50 shadow-sm shrink-0 uppercase tracking-wider">
+  1
+</span>
                     <div>
                         <h5 class="text-sm font-bold text-white uppercase tracking-wider">FOKUS</h5>
                         <p class="text-xs text-slate-300 mt-1 leading-relaxed">Menggunakan seluruh kemampuan dan kompetensi Perusahaan secara optimal untuk meningkatkan nilai tambah Perusahaan.</p>
@@ -197,7 +210,10 @@
             <!-- 02 INTEGRITAS -->
             <div class="p-4 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
                 <div class="flex items-start gap-3.5">
-                    <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">02</span>
+                    <!-- Contoh Ganti di Nomor 01 (Lakukan hal yang sama untuk 02-05) -->
+<span class="px-3 py-1 text-[11px] font-extrabold bg-warmBronze/20 text-warmBronze rounded-tl-xl rounded-br-xl rounded-tr-xs rounded-bl-xs border border-warmBronze/50 shadow-sm shrink-0 uppercase tracking-wider">
+  2
+</span>
                     <div>
                         <h5 class="text-sm font-bold text-white uppercase tracking-wider">INTEGRITAS</h5>
                         <p class="text-xs text-slate-300 mt-1 leading-relaxed">Mampu mewujudkan komitmen ke dalam tindakan yang nyata.</p>
@@ -208,7 +224,11 @@
             <!-- 03 VISIONARY -->
             <div class="p-4 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
                 <div class="flex items-start gap-3.5">
-                    <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">03</span>
+                    <!-- Contoh Ganti di Nomor 01 (Lakukan hal yang sama untuk 02-05) -->
+<!-- Contoh Ganti di Nomor 01 (Lakukan hal yang sama untuk 02-05) -->
+<span class="px-3 py-1 text-[11px] font-extrabold bg-warmBronze/20 text-warmBronze rounded-tl-xl rounded-br-xl rounded-tr-xs rounded-bl-xs border border-warmBronze/50 shadow-sm shrink-0 uppercase tracking-wider">
+  3
+</span>
                     <div>
                         <h5 class="text-sm font-bold text-white uppercase tracking-wider">VISIONARY</h5>
                         <p class="text-xs text-slate-300 mt-1 leading-relaxed">Mengantisipasi lingkungan usaha yang berkembang saat ini maupun yang akan datang untuk tumbuh berkembang.</p>
@@ -225,7 +245,10 @@
         <!-- 04 EXCELLENCE -->
         <div class="p-4 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
             <div class="flex items-start gap-3.5">
-                <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">04</span>
+                <!-- Contoh Ganti di Nomor 01 (Lakukan hal yang sama untuk 02-05) -->
+<span class="px-3 py-1 text-[11px] font-extrabold bg-warmBronze/20 text-warmBronze rounded-tl-xl rounded-br-xl rounded-tr-xs rounded-bl-xs border border-warmBronze/50 shadow-sm shrink-0 uppercase tracking-wider">
+  4
+</span>
                 <div>
                     <h5 class="text-sm font-bold text-white uppercase tracking-wider">EXCELLENCE</h5>
                     <p class="text-xs text-slate-300 mt-1 leading-relaxed">Menampilkan yang terbaik dari segala aspek pengelolaan usaha.</p>
@@ -236,7 +259,10 @@
         <!-- 05 MUTUAL RESPECT -->
         <div class="p-4 rounded-xl border border-white/10 bg-navyCard/60 backdrop-blur-md hover:border-warmBronze/50 transition-all duration-300">
             <div class="flex items-start gap-3.5">
-                <span class="px-2.5 py-1 text-xs font-bold bg-warmBronze/20 text-warmBronze rounded-md border border-warmBronze/30 shrink-0">05</span>
+                <!-- Contoh Ganti di Nomor 01 (Lakukan hal yang sama untuk 02-05) -->
+<span class="px-3 py-1 text-[11px] font-extrabold bg-warmBronze/20 text-warmBronze rounded-tl-xl rounded-br-xl rounded-tr-xs rounded-bl-xs border border-warmBronze/50 shadow-sm shrink-0 uppercase tracking-wider">
+  5
+</span>
                 <div>
                     <h5 class="text-sm font-bold text-white uppercase tracking-wider">MUTUAL RESPECT</h5>
                     <p class="text-xs text-slate-300 mt-1 leading-relaxed">Menempatkan semua pihak yang saling terkait setara dalam kegiatan usaha.</p>
