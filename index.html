@@ -470,23 +470,31 @@
 
     <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Cari semua tombol yang punya href="#kontak"
-    const contactLinks = document.querySelectorAll('a[href="#kontak"]');
     const contactCard = document.getElementById('contact-card-box');
 
-    contactLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        // Beri efek pop-up / glow membesar pas sampai di bawah
-        if (contactCard) {
+    // Fungsi untuk memicu efek animasi pop-up + glow
+    const triggerContactGlow = () => {
+      if (contactCard) {
+        setTimeout(() => {
+          contactCard.classList.add('scale-105', 'ring-4', 'ring-warmBronze/50', 'shadow-warmBronze/20');
+          
           setTimeout(() => {
-            contactCard.classList.add('scale-105', 'ring-4', 'ring-warmBronze/50', 'shadow-warmBronze/20');
-            
-            // Kembalikan ke ukuran normal halus setelah 1.5 detik
-            setTimeout(() => {
-              contactCard.classList.remove('scale-105', 'ring-4', 'ring-warmBronze/50', 'shadow-warmBronze/20');
-            }, 1500);
-          }, 400); // Jeda tunggu scroll
-        }
+            contactCard.classList.remove('scale-105', 'ring-4', 'ring-warmBronze/50', 'shadow-warmBronze/20');
+          }, 1500);
+        }, 300);
+      }
+    };
+
+    // 1. Cek kalau pengunjung masuk dari halaman lain dengan URL index.html#kontak
+    if (window.location.hash === '#kontak') {
+      triggerContactGlow();
+    }
+
+    // 2. Cek kalau tombol "Hubungi Kami" diklik saat masih di dalam halaman index.html
+    const contactLinks = document.querySelectorAll('a[href="#kontak"], a[href="index.html#kontak"]');
+    contactLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        triggerContactGlow();
       });
     });
   });
