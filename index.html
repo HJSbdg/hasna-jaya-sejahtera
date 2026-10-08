@@ -368,41 +368,128 @@
         </div>
     </section>
 
-    <!-- FOOTER KONTAK -->
-    <footer id="kontak" class="bg-navyDark text-slate-300 border-t border-warmBrown/30 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-duration="1000">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
-                <div class="space-y-4">
-                    <img src="logo.png" alt="PT Hasna Jaya Sejahtera" class="h-12 w-auto">
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        PT. Hasna Jaya Sejahtera siap menjadi mitra kerja terbaik Anda dalam memenuhi kebutuhan tenaga kerja berkualitas.
+    <!-- SECTION FOOTER & KONTAK -->
+<footer id="kontak" class="relative z-10 bg-navyCard/90 border-t border-slate-800 pt-16 pb-12 transition-all duration-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Wrapper Utama Kontak (Bisa Efek Pop-up / Highlight) -->
+        <div id="contact-card-box" class="p-6 md:p-10 rounded-3xl bg-slate-900/80 border border-white/10 shadow-2xl backdrop-blur-xl transition-all duration-500">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Kolom Kiri: Profil Singkat HJS (4/12) -->
+                <div class="lg:col-span-4 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <img src="logo.png" alt="Logo PT Hasna Jaya Sejahtera" class="h-10 w-auto">
+                        <span class="text-lg font-bold text-white tracking-wider">PT. HASNA JAYA SEJAHTERA</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Solusi penyedia tenaga kerja profesional dan terpercaya untuk Satuan Pengamanan, Cleaning Service, Driver, serta Dukungan Fasilitas Perkantoran.
                     </p>
+                    <div class="pt-2">
+                        <span class="px-3 py-1 text-[11px] font-bold text-warmBronze bg-warmBronze/10 border border-warmBronze/30 rounded-full">
+                            Your Workforce, Our Commitment
+                        </span>
+                    </div>
                 </div>
 
-                <div class="space-y-3">
-                    <h5 class="text-white font-bold text-base mb-2 border-b border-warmBrown/30 pb-1 inline-block">Lokasi Kantor</h5>
-                    <p class="text-xs text-slate-300"><strong class="text-warmBronze">Kantor Pusat (Serang):</strong><br>
-                    Jl. Garuda No.184, Panancangan, Cipocok Jaya, Kota Serang - Banten.</p>
-                    <p class="text-xs text-slate-300"><strong class="text-warmBronze">Kantor Cabang (Bandung):</strong><br>
-                    Jl. Kawung Ece No.15, Bandung.</p>
+                <!-- Kolom Tengah: Lokasi & Maps Kawung Ece (4/12) -->
+                <div class="lg:col-span-4 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-warmBronze">Lokasi Kantor</h4>
+                    
+                    <div class="text-xs text-slate-300 space-y-2">
+                        <p><strong class="text-white">Kantor Pusat (Serang):</strong><br>Jl. Garuda No.184, Panancangan, Cipocok Jaya, Kota Serang - Banten.</p>
+                        <p><strong class="text-white">Kantor Cabang (Bandung):</strong><br>Jl. Kawung Ece No.15, Bandung.</p>
+                    </div>
+
+                    <!-- Embed Google Maps Kawung Ece Bandung -->
+                    <div class="mt-3 overflow-hidden rounded-xl border border-warmBronze/30 shadow-lg h-36 relative group">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9123!2d107.625!3d-6.905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTQnMzAuMCJTIDEwN8KwMzcnMzAuMCJF!5e0!3m2!1sid!2sid!4v1600000000000!5m2!1sid!2sid" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; filter: grayscale(20%) contrast(1.2) opacity(0.85);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
 
-                <div class="space-y-3">
-                    <h5 class="text-white font-bold text-base mb-2 border-b border-warmBrown/30 pb-1 inline-block">Hubungi Kami</h5>
-                    <p class="text-xs text-slate-300"><i class="fa-solid fa-phone text-warmBronze mr-2"></i> 081-1125-101 / 0821 2991 5466</p>
-                    <p class="text-xs text-slate-300"><i class="fa-brands fa-whatsapp text-green-500 mr-2"></i> 0812 2255 977 / 0878 5748 9823</p>
-                    <p class="text-xs text-slate-300"><i class="fa-solid fa-envelope text-burgundy mr-2"></i> hasnajayabandung@gmail.com</p>
+                <!-- Kolom Kanan: Hubungi Kami & WA Direct Link (4/12) -->
+                <div class="lg:col-span-4 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-warmBronze">Hubungi Kami</h4>
+                    
+                    <div class="space-y-2 text-xs">
+                        <!-- Telepon Direct -->
+                        <div class="flex items-center gap-2 text-slate-200">
+                            <span class="text-warmBronze">📞</span>
+                            <a href="tel:0811125101" class="hover:text-warmBronze transition-colors">081-1125-101</a> / 
+                            <a href="tel:082129915466" class="hover:text-warmBronze transition-colors">0821 2991 5466</a>
+                        </div>
+
+                        <!-- WhatsApp Direct 1 -->
+                        <div class="flex items-center gap-2">
+                            <span class="text-emerald-400">💬</span>
+                            <a href="https://wa.me/628122255977?text=Halo%20PT%20Hasna%20Jaya%20Sejahtera,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20outsourcing." target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-600 hover:text-white transition-all font-semibold flex items-center gap-1.5">
+                                WhatsApp (0812-2255-977)
+                            </a>
+                        </div>
+
+                        <!-- WhatsApp Direct 2 -->
+                        <div class="flex items-center gap-2">
+                            <span class="text-emerald-400">💬</span>
+                            <a href="https://wa.me/6287857489823?text=Halo%20PT%20Hasna%20Jaya%20Sejahtera,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20outsourcing." target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-600 hover:text-white transition-all font-semibold flex items-center gap-1.5">
+                                WhatsApp (0878-5748-9823)
+                            </a>
+                        </div>
+
+                        <!-- Email Direct -->
+                        <div class="flex items-center gap-2 text-slate-200 pt-1">
+                            <span class="text-warmBronze">✉️</span>
+                            <a href="mailto:hasnajayabandung@gmail.com" class="hover:text-warmBronze transition-colors">hasnajayabandung@gmail.com</a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
-            <div class="pt-8 text-center text-xs text-slate-500">
-                <p>&copy; 2026 PT. Hasna Jaya Sejahtera. All rights reserved.</p>
-            </div>
         </div>
-    </footer>
+
+        <!-- Copyright -->
+        <div class="mt-8 text-center text-xs text-slate-500 border-t border-slate-800/80 pt-6">
+            © 2026 PT. Hasna Jaya Sejahtera. All rights reserved.
+        </div>
+
+    </div>
+</footer>
 
     <!-- External JS Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Cari semua tombol yang punya href="#kontak"
+    const contactLinks = document.querySelectorAll('a[href="#kontak"]');
+    const contactCard = document.getElementById('contact-card-box');
+
+    contactLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        // Beri efek pop-up / glow membesar pas sampai di bawah
+        if (contactCard) {
+          setTimeout(() => {
+            contactCard.classList.add('scale-105', 'ring-4', 'ring-warmBronze/50', 'shadow-warmBronze/20');
+            
+            // Kembalikan ke ukuran normal halus setelah 1.5 detik
+            setTimeout(() => {
+              contactCard.classList.remove('scale-105', 'ring-4', 'ring-warmBronze/50', 'shadow-warmBronze/20');
+            }, 1500);
+          }, 400); // Jeda tunggu scroll
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
