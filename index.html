@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PT. Hasna Jaya Sejahtera - Your Workforce Our Commitment</title>
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -21,11 +23,13 @@
             }
         }
     </script>
+    
+    <!-- FontAwesome & AOS CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <style>
-        .slide-fade { transition: opacity 1s ease-in-out; }
-    </style>
+    
+    <!-- External Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased overflow-x-hidden">
 
@@ -116,9 +120,11 @@
         </div>
     </header>
 
-    <!-- SECTION TENTANG KAMI -->
+    <!-- SECTION TENTANG KAMI & VISI MISI -->
     <section id="tentang" class="py-24 bg-navyDark border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <!-- Profil Singkat -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="relative" data-aos="fade-right" data-aos-duration="1000">
                     <div class="absolute -top-4 -left-4 w-24 h-24 bg-warmBrown/20 rounded-2xl -z-10"></div>
@@ -154,6 +160,12 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Banner Gambar Visi Misi -->
+            <div class="w-full overflow-hidden rounded-2xl border border-warmBrown/30 shadow-2xl" data-aos="fade-up" data-aos-duration="1000">
+                <img src="visi-misi.jpg" alt="Visi dan Misi PT Hasna Jaya Sejahtera" class="w-full h-auto object-cover block">
+            </div>
+
         </div>
     </section>
 
@@ -283,63 +295,8 @@
         </div>
     </footer>
 
+    <!-- External JS Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 900, easing: 'ease-in-out', once: true, offset: 120 });
-
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            const isOpening = mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            menuBtn.setAttribute('aria-expanded', String(isOpening));
-        });
-
-        mobileMenu.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuBtn.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.slide-dot');
-        let currentSlide = 0;
-        const totalSlides = slides.length;
-        let sliderTimer;
-
-        function showSlide(index) {
-            if (!totalSlides) return;
-            currentSlide = (index + totalSlides) % totalSlides;
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('opacity-100', i === currentSlide);
-                slide.classList.toggle('opacity-0', i !== currentSlide);
-                slide.setAttribute('aria-hidden', String(i !== currentSlide));
-            });
-            dots.forEach((dot, i) => {
-                const active = i === currentSlide;
-                dot.classList.toggle('bg-warmBronze', active);
-                dot.classList.toggle('bg-white/40', !active);
-                dot.setAttribute('aria-label', `Tampilkan slide ${i + 1}`);
-                dot.setAttribute('aria-current', active ? 'true' : 'false');
-            });
-        }
-
-        function startSlider() {
-            if (totalSlides < 2) return;
-            clearInterval(sliderTimer);
-            sliderTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
-        }
-
-        dots.forEach((dot, i) => {
-            dot.addEventListener('click', () => {
-                showSlide(i);
-                startSlider();
-            });
-        });
-
-        showSlide(0);
-        startSlider();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
