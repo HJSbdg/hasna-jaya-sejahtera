@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galeri Kegiatan & Dokumentasi - PT. Hasna Jaya Sejahtera</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo/logo.png?v=3">
+    <link rel="apple-touch-icon" href="assets/logo/logo.png?v=3">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navyDark: '#0B192C',
+                        navyCard: '#1E2A38',
+                        burgundy: '#800020',
+                        burgundyHover: '#600018',
+                        warmBrown: '#8B5E3C',
+                        warmBronze: '#A67C52',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    
+    <style>
+        /* CSS Khusus Tombol Menu Galeri 3D Silver & Kilatan Cahaya */
+        .nav-btn-galeri-style {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #f0f2f5 0%, #b8c0cc 45%, #707a8a 100%);
+        color: #0b192c !important;
+        font-weight: 700;
+        border-radius: 9999px;
+        border: 1px solid #ffffff;
+        box-shadow: 
+            inset 0 2px 3px rgba(255, 255, 255, 0.95),
+            inset 0 -3px 4px rgba(0, 0, 0, 0.45),
+            0 4px 10px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center; /* <-- Ini yang bikin isinya pas di tengah */
+        gap: 0.5rem;
+        padding-left: 1.25rem;  /* <-- Padding kiri disamakan */
+        padding-right: 1.25rem; /* <-- Padding kanan disamakan */
+    }
+
+        .nav-btn-galeri-style:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                inset 0 2px 5px rgba(255, 255, 255, 1),
+                inset 0 -3px 4px rgba(0, 0, 0, 0.5),
+                0 6px 15px rgba(255, 255, 255, 0.25);
+        }
+
+        /* Kilatan Cahaya Otomatis Setiap Beberapa Detik */
+        .nav-btn-galeri-style::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -120%;
+            width: 70%;
+            height: 200%;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.85) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(25deg);
+            animation: galeriShine 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes galeriShine {
+            0% {
+                left: -120%;
+            }
+            20% {
+                left: 200%;
+            }
+            100% {
+                left: 200%;
+            }
+        }
+        
+    /* Background Navy Plaid Subtle (Lembut & Tidak Bikin Pusing) */
+    body.galeri-bg {
+        background-color: #0b192c;
+        background-image: 
+            /* Garis vertikal & horizontal halus */
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            /* Kotak sedang abu-abu samar */
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 40px, transparent 40px),
+            linear-gradient(0deg, rgba(255, 255, 255, 0.02) 40px, transparent 40px),
+            /* Akses gradasi gelap melingkar biar tengahnya lebih lembut */
+            radial-gradient(circle at center, rgba(15, 32, 56, 0.8) 0%, rgba(7, 15, 26, 0.98) 100%);
+        background-size: 200px 200px, 200px 200px, 200px 200px, 200px 200px, 100% 100%;
+        background-attachment: fixed;
+    }
+    
+    </style>
+</head>
+
+<body class="galeri-bg text-slate-100 font-sans antialiased">
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================== -->
+    <nav class="fixed top-0 left-0 w-full bg-navyDark/90 backdrop-blur-md z-50 border-b border-warmBrown/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="assets/logo/logo.png" alt="PT Hasna Jaya Sejahtera Logo" class="h-10 sm:h-12 md:h-14 w-auto object-contain">
+                <span class="font-bold text-lg sm:text-xl tracking-wide text-white">
+                    PT. HASNA JAYA SEJAHTERA
+                </span>
+            </a>
+
+            <!-- Menu Desktop (Posisi Galeri di antara Klien dan Hubungi Kami) -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-warmBronze transition">Beranda</a>
+                <a href="index.html#tentang" class="hover:text-warmBronze transition">Tentang Kami</a>
+                <a href="index.html#layanan" class="hover:text-warmBronze transition">Layanan</a>
+                <a href="index.html#keunggulan" class="hover:text-warmBronze transition">Keunggulan</a>
+                <a href="legalitas.html" class="hover:text-warmBronze transition">Legalitas</a>
+                <a href="klien.html" class="hover:text-warmBronze transition">Klien</a>
+
+                <!-- Tombol 3D Silver Galeri Desktop -->
+                <a href="galeri.html" id="nav-btn-galeri" class="nav-btn-galeri-style px-5 py-2.5">
+                    <i class="fa-solid fa-camera text-xs"></i>
+                    <span>Galeri</span>
+                </a>
+
+                <a href="index.html#kontak" class="bg-burgundy hover:bg-burgundyHover text-white px-5 py-2.5 rounded-full font-semibold transition shadow-lg shadow-burgundy/30">
+                    Hubungi Kami
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" type="button" aria-label="Buka menu navigasi" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Posisi Galeri di antara Klien dan Hubungi Kami) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navyDark border-b border-warmBrown/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block hover:text-warmBronze transition">Beranda</a>
+            <a href="index.html#tentang" class="block hover:text-warmBronze transition">Tentang Kami</a>
+            <a href="index.html#layanan" class="block hover:text-warmBronze transition">Layanan</a>
+            <a href="index.html#keunggulan" class="block hover:text-warmBronze transition">Keunggulan</a>
+            <a href="legalitas.html" class="block hover:text-warmBronze transition">Legalitas</a>            
+            <a href="klien.html" class="block hover:text-warmBronze transition">Klien</a>
+            
+            <!-- Tombol 3D Silver Galeri Mobile -->
+            <a href="galeri.html" class="nav-btn-galeri-style px-5 py-2 my-1 inline-flex">
+                <i class="fa-solid fa-camera text-xs"></i>
+                <span>Galeri</span>
+            </a>
+
+            <a href="index.html#kontak" class="block bg-burgundy hover:bg-burgundyHover text-white px-5 py-2 rounded-full font-semibold mt-2 text-center">
+                Hubungi Kami
+            </a>
+        </div>
+    </nav>
+
+    <!-- =========================================================
+         HERO GALERI
+    ========================================================== -->
+    <header class="relative isolate overflow-hidden bg-navyDark/40 backdrop-blur-sm pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="min-h-[380px] py-16 sm:py-20 flex items-center">
+                <div class="max-w-2xl space-y-6" data-aos="fade-right" data-aos-duration="1200">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-burgundy/30 border border-burgundy text-warmBronze text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-camera-retro"></i>
+                        Dokumentasi Kegiatan
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight tracking-tight">
+                        Galeri & <span class="text-warmBronze">Aktivitas Tim</span>
+                    </h1>
+
+                    <p class="max-w-xl text-base sm:text-lg text-slate-300 leading-relaxed">
+                        Dokumentasi rekam jejak, koordinasi lapangan, kunjungan kemitraan, dan kegiatan operasional PT. Hasna Jaya Sejahtera dalam memberikan pelayanan terbaik.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================
+         MAIN CONTENT - GALERI FOTO
+    ========================================================== -->
+    <main class="py-20 bg-slate-900/50 backdrop-blur-sm border-t border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Grid Foto -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Card 1: foto-1.jpeg -->
+                <div class="bg-navyCard rounded-2xl overflow-hidden border border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-warmBrown/20 hover:border-warmBrown/50 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden group h-64">
+                        <img src="galeri/foto-1.jpeg" alt="Sinergi dan Kehangatan Tim HJS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-warmBronze uppercase tracking-wider block mb-2">Internal & Management</span>
+                            <h3 class="text-xl font-bold text-white mb-3">Sinergi dan Kehangatan Tim HJS</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                                Suasana kebersamaan yang solid antara jajaran manajemen dan tim operasional PT Hasna Jaya Sejahtera dalam sebuah agenda santai namun penuh keakraban. Komunikasi yang terjalin erat ini menjadi fondasi utama dalam membangun koordinasi kerja yang handal dan profesional di lapangan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: foto-2.jpg -->
+                <div class="bg-navyCard rounded-2xl overflow-hidden border border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-warmBrown/20 hover:border-warmBrown/50 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden group h-64">
+                        <img src="galeri/foto-2.jpg" alt="Kunjungan Kerja dan Koordinasi Kemitraan Strategis" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-warmBronze uppercase tracking-wider block mb-2">Kemitraan Strategis</span>
+                            <h3 class="text-xl font-bold text-white mb-3">Kunjungan Kerja & Koordinasi Kemitraan</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                                Momen penyerahan dokumen kerja sama dalam kunjungan strategis manajemen PT Hasna Jaya Sejahtera. Hal ini mencerminkan komitmen perusahaan dalam memperluas jalinan relasi serta memberikan layanan fasilitas manajemen dan pengamanan terbaik bagi para mitra.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: foto-3.jpeg -->
+                <div class="bg-navyCard rounded-2xl overflow-hidden border border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-warmBrown/20 hover:border-warmBrown/50 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden group h-64">
+                        <img src="galeri/foto-3.jpeg" alt="Penyerahan Profil Perusahaan kepada Mitra" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-warmBronze uppercase tracking-wider block mb-2">Presentasi Layanan</span>
+                            <h3 class="text-xl font-bold text-white mb-3">Penyerahan Profil Perusahaan kepada Mitra</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                                Perwakilan manajemen PT Hasna Jaya Sejahtera saat menyerahkan dokumen profil perusahaan dan portofolio layanan kepada pihak mitra. Bukti nyata komitmen transparansi, profesionalisme, dan kepercayaan dalam menjalin kerja sama bisnis jangka panjang.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: foto-4.jpeg -->
+                <div class="bg-navyCard rounded-2xl overflow-hidden border border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-warmBrown/20 hover:border-warmBrown/50 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden group h-64">
+                        <img src="galeri/foto-4.jpeg" alt="Kesiapan Tim Profesional PT Hasna Jaya Sejahtera" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-warmBronze uppercase tracking-wider block mb-2">Kunjungan Lapangan</span>
+                            <h3 class="text-xl font-bold text-white mb-3">Kesiapan Tim Profesional HJS</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                                Potret kebersamaan tim operasional dan pengamanan PT Hasna Jaya Sejahtera yang selalu siap memberikan dedikasi tinggi, kedisiplinan, serta pelayanan prima demi keamanan dan kenyamanan fasilitas klien.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: foto-5.jpeg -->
+                <div class="bg-navyCard rounded-2xl overflow-hidden border border-slate-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-warmBrown/20 hover:border-warmBrown/50 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden group h-64">
+                        <img src="galeri/foto-5.jpeg" alt="Konsultasi dan Diskusi Layanan Manajemen Fasilitas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-warmBronze uppercase tracking-wider block mb-2">Konsultasi Klien</span>
+                            <h3 class="text-xl font-bold text-white mb-3">Diskusi Layanan Manajemen Fasilitas</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                                Suasana profesional saat sesi diskusi dan konsultasi layanan bersama klien. Tim PT Hasna Jaya Sejahtera selalu siap mendengarkan kebutuhan spesifik perusahaan untuk memberikan solusi facility management serta security outsourcing yang paling optimal dan tepat sasaran.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer class="bg-navyDark text-slate-300 border-t border-warmBrown/30 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
+
+                <!-- Info Perusahaan -->
+                <div class="space-y-4">
+                    <img src="assets/logo/logo.png" alt="PT Hasna Jaya Sejahtera" class="h-16 w-auto">
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        PT. Hasna Jaya Sejahtera siap menjadi mitra kerja terbaik Anda dalam memenuhi kebutuhan tenaga kerja berkualitas.
+                    </p>
+                </div>
+
+                <!-- Lokasi -->
+                <div class="space-y-3">
+                    <h5 class="text-white font-bold text-base mb-2 border-b border-warmBrown/30 pb-1 inline-block">Lokasi Kantor</h5>
+                    <p class="text-xs text-slate-300">
+                        <strong class="text-warmBronze">Kantor Pusat (Serang):</strong><br>
+                        Jl. Garuda No.184, Panancangan, Cipocok Jaya, Kota Serang - Banten.
+                    </p>
+                    <p class="text-xs text-slate-300">
+                        <strong class="text-warmBronze">Kantor Cabang (Bandung):</strong><br>
+                        Jl. Kawung Ece No.15, Bandung.
+                    </p>
+                </div>
+
+                <!-- Kontak -->
+                <div class="space-y-3">
+                    <h5 class="text-white font-bold text-base mb-2 border-b border-warmBrown/30 pb-1 inline-block">Hubungi Kami</h5>
+                    <p class="text-xs text-slate-300">
+                        <i class="fa-solid fa-phone text-warmBronze mr-2"></i>081-1125-101 / 0821 2991 5466
+                    </p>
+                    <p class="text-xs text-slate-300">
+                        <i class="fa-brands fa-whatsapp text-green-500 mr-2"></i>0812 2255 977 / 0878 5748 9823
+                    </p>
+                    <p class="text-xs text-slate-300">
+                        <i class="fa-solid fa-envelope text-burgundy mr-2"></i>hasnajayabandung@gmail.com
+                    </p>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2026 PT. Hasna Jaya Sejahtera. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT MOBILE MENU -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            const isOpening = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.setAttribute('aria-expanded', String(isOpening));
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+
+    <!-- AOS JAVASCRIPT -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 900,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 120
+        });
+    </script>
+
+</body>
+</html>
