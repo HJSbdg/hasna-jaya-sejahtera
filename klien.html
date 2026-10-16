@@ -73,6 +73,85 @@
 
     <!-- AOS Animation -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <style>
+        /* CSS Khusus Tombol Menu Galeri 3D Silver & Kilatan Cahaya */
+        .nav-btn-galeri-style {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #f0f2f5 0%, #b8c0cc 45%, #707a8a 100%);
+        color: #0b192c !important;
+        font-weight: 700;
+        border-radius: 9999px;
+        border: 1px solid #ffffff;
+        box-shadow: 
+            inset 0 2px 3px rgba(255, 255, 255, 0.95),
+            inset 0 -3px 4px rgba(0, 0, 0, 0.45),
+            0 4px 10px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center; /* <-- Ini yang bikin isinya pas di tengah */
+        gap: 0.5rem;
+        padding-left: 1.25rem;  /* <-- Padding kiri disamakan */
+        padding-right: 1.25rem; /* <-- Padding kanan disamakan */
+    }
+
+        .nav-btn-galeri-style:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                inset 0 2px 5px rgba(255, 255, 255, 1),
+                inset 0 -3px 4px rgba(0, 0, 0, 0.5),
+                0 6px 15px rgba(255, 255, 255, 0.25);
+        }
+
+        /* Kilatan Cahaya Otomatis Setiap Beberapa Detik */
+        .nav-btn-galeri-style::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -120%;
+            width: 70%;
+            height: 200%;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.85) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(25deg);
+            animation: galeriShine 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes galeriShine {
+            0% {
+                left: -120%;
+            }
+            20% {
+                left: 200%;
+            }
+            100% {
+                left: 200%;
+            }
+        }
+        
+    /* Background Navy Plaid Subtle (Lembut & Tidak Bikin Pusing) */
+    body.galeri-bg {
+        background-color: #0b192c;
+        background-image: 
+            /* Garis vertikal & horizontal halus */
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            /* Kotak sedang abu-abu samar */
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 40px, transparent 40px),
+            linear-gradient(0deg, rgba(255, 255, 255, 0.02) 40px, transparent 40px),
+            /* Akses gradasi gelap melingkar biar tengahnya lebih lembut */
+            radial-gradient(circle at center, rgba(15, 32, 56, 0.8) 0%, rgba(7, 15, 26, 0.98) 100%);
+        background-size: 200px 200px, 200px 200px, 200px 200px, 200px 200px, 100% 100%;
+        background-attachment: fixed;
+    }
+    
+    </style>
 </head>
 
 <body class="bg-slate-900 text-slate-100 font-sans antialiased overflow-x-hidden">
@@ -551,98 +630,103 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-navyDark text-slate-300 border-t border-warmBrown/30 pt-16 pb-8">
+    <!-- SECTION FOOTER & KONTAK -->
+    <footer id="kontak" class="relative z-10 bg-navyCard/90 border-t border-slate-800 pt-16 pb-12 transition-all duration-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
-                <div class="space-y-4">
-                    <img src="logo.png" alt="PT Hasna Jaya Sejahtera" class="h-16 w-auto">
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        PT. Hasna Jaya Sejahtera siap menjadi mitra kerja terbaik Anda dalam memenuhi kebutuhan tenaga kerja berkualitas.
-                    </p>
+            
+            <!-- Wrapper Utama Kontak (Bisa Efek Pop-up / Highlight) -->
+            <div id="contact-card-box" class="p-6 md:p-10 rounded-3xl bg-slate-900/80 border border-white/10 shadow-2xl backdrop-blur-xl transition-all duration-500">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Kolom Kiri: Profil Singkat HJS (4/12) -->
+                    <div class="lg:col-span-4 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <img src="logo.png" alt="Logo PT Hasna Jaya Sejahtera" class="h-10 w-auto">
+                            <span class="text-lg font-bold text-white tracking-wider">PT. HASNA JAYA SEJAHTERA</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Solusi penyedia tenaga kerja profesional dan terpercaya untuk Satuan Pengamanan, Cleaning Service, Driver, serta Dukungan Fasilitas Perkantoran.
+                        </p>
+                        <div class="pt-2">
+                            <span class="px-3 py-1 text-[11px] font-bold text-warmBronze bg-warmBronze/10 border border-warmBronze/30 rounded-full">
+                                Your Workforce, Our Commitment
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Tengah: Lokasi & Maps Kawung Ece (4/12) -->
+                    <div class="lg:col-span-4 space-y-3">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-warmBronze">Lokasi Kantor</h4>
+                        
+                        <div class="text-xs text-slate-300 space-y-2">
+                            <p><strong class="text-white">Kantor Pusat (Serang):</strong><br>Jl. Garuda No.184, Panancangan, Cipocok Jaya, Kota Serang - Banten.</p>
+                            <p><strong class="text-white">Kantor Cabang (Bandung):</strong><br>Jl. Kawung Ece No.15, Bandung.</p>
+                        </div>
+
+                        <!-- Embed Google Maps Kawung Ece Bandung -->
+                        <div class="mt-3 overflow-hidden rounded-xl border border-warmBronze/30 shadow-lg h-36 relative group">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9123!2d107.625!3d-6.905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTQnMzAuMCJTIDEwN8KwMzcnMzAuMCJF!5e0!3m2!1sid!2sid!4v1600000000000!5m2!1sid!2sid" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0; filter: grayscale(20%) contrast(1.2) opacity(0.85);" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan: Hubungi Kami & WA Direct Link (4/12) -->
+                    <div class="lg:col-span-4 space-y-3">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-warmBronze">Hubungi Kami</h4>
+                        
+                        <div class="space-y-2 text-xs">
+                            <!-- Telepon Direct -->
+                            <div class="flex items-center gap-2 text-slate-200">
+                                <span class="text-warmBronze">📞</span>
+                                <a href="tel:0811125101" class="hover:text-warmBronze transition-colors">081-1125-101</a> / 
+                                <a href="tel:082129915466" class="hover:text-warmBronze transition-colors">0821 2991 5466</a>
+                            </div>
+
+                            <!-- WhatsApp Direct 1 -->
+                            <div class="flex items-center gap-2">
+                                <span class="text-emerald-400">💬</span>
+                                <a href="https://wa.me/628122255977?text=Halo%20PT%20Hasna%20Jaya%20Sejahtera,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20outsourcing." target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-600 hover:text-white transition-all font-semibold flex items-center gap-1.5">
+                                    WhatsApp (0812-2255-977)
+                                </a>
+                            </div>
+
+                            <!-- WhatsApp Direct 2 -->
+                            <div class="flex items-center gap-2">
+                                <span class="text-emerald-400">💬</span>
+                                <a href="https://wa.me/6287857489823?text=Halo%20PT%20Hasna%20Jaya%20Sejahtera,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20outsourcing." target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-600 hover:text-white transition-all font-semibold flex items-center gap-1.5">
+                                    WhatsApp (0878-5748-9823)
+                                </a>
+                            </div>
+
+                            <!-- Email Direct -->
+                            <div class="flex items-center gap-2 text-slate-200 pt-1">
+                                <span class="text-warmBronze">✉️</span>
+                                <a href="mailto:hasnajayabandung@gmail.com" class="hover:text-warmBronze transition-colors">hasnajayabandung@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="space-y-3">
-                    <h5 class="text-white font-bold text-base mb-2 border-b border-warmBrown/30 pb-1 inline-block">Lokasi Kantor</h5>
-                    <p class="text-xs text-slate-300">
-                        <strong class="text-warmBronze">Kantor Pusat (Serang):</strong><br>
-                        Jl. Garuda No.184, Panancangan, Cipocok Jaya, Kota Serang - Banten.
-                    </p>
-                    <p class="text-xs text-slate-300">
-                        <strong class="text-warmBronze">Kantor Cabang (Bandung):</strong><br>
-                        Jl. Kawung Ece No.15, Bandung.
-                    </p>
-                </div>
-
-                <div class="space-y-3">
-                    <h5 class="text-white font-bold text-base mb-2 border-b border-warmBrown/30 pb-1 inline-block">Hubungi Kami</h5>
-                    <p class="text-xs text-slate-300"><i class="fa-solid fa-phone text-warmBronze mr-2"></i> 081-1125-101 / 0821 2991 5466</p>
-                    <p class="text-xs text-slate-300"><i class="fa-brands fa-whatsapp text-green-500 mr-2"></i> 0812 2255 977 / 0878 5748 9823</p>
-                    <p class="text-xs text-slate-300"><i class="fa-solid fa-envelope text-burgundy mr-2"></i> hasnajayabandung@gmail.com</p>
-                </div>
             </div>
 
-            <div class="pt-8 text-center text-xs text-slate-500">
-                <p>© 2026 PT. Hasna Jaya Sejahtera. All rights reserved.</p>
+            <!-- Copyright -->
+            <div class="mt-8 text-center text-xs text-slate-500 border-t border-slate-800/80 pt-6">
+                © 2026 PT. Hasna Jaya Sejahtera. All rights reserved.
             </div>
+
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
-    <script>
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            const isOpening = mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            menuBtn.setAttribute('aria-expanded', String(isOpening));
-        });
-
-        mobileMenu.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuBtn.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        // Hero Background Slider Loop
-        let currentBg = 1;
-        setInterval(() => {
-            document.getElementById(`hero-bg-${currentBg}`).classList.add('opacity-0');
-            document.getElementById(`hero-bg-${currentBg}`).classList.remove('opacity-100');
-            
-            currentBg = currentBg === 3 ? 1 : currentBg + 1;
-            
-            document.getElementById(`hero-bg-${currentBg}`).classList.remove('opacity-0');
-            document.getElementById(`hero-bg-${currentBg}`).classList.add('opacity-100');
-        }, 5000);
-
-        // Filter Klien Category Function
-        function filterKlien(category) {
-            const items = document.querySelectorAll('.klien-item');
-            const buttons = document.querySelectorAll('.filter-btn');
-
-            buttons.forEach(btn => {
-                btn.classList.remove('active', 'bg-burgundy', 'border-burgundy');
-                btn.classList.add('bg-navyCard', 'border-slate-800');
-            });
-
-            event.currentTarget.classList.add('active', 'bg-burgundy', 'border-burgundy');
-            event.currentTarget.classList.remove('bg-navyCard', 'border-slate-800');
-
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
-    <!-- AOS JavaScript -->
+    <!-- External JS Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -652,29 +736,35 @@
             offset: 120
         });
     </script>
-<script>
-  // Otomatis Flip secara bergantian tiap 4.5 detik
-  document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.flip-card');
-    let currentIndex = 0;
 
-    setInterval(() => {
-      if (cards.length > 0) {
-        // Toggle class flipped di kartu saat ini
-        cards[currentIndex].classList.toggle('is-flipped');
-        
-        // Pindah ke kartu berikutnya
-        currentIndex = (currentIndex + 1) % cards.length;
-      }
-    }, 4500);
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const contactCard = document.getElementById('contact-card-box');
 
-    // Pengunjung juga tetap bisa klik manual kartunya kalau penasaran
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        card.classList.toggle('is-flipped');
+        const triggerContactGlow = () => {
+          if (contactCard) {
+            setTimeout(() => {
+              contactCard.classList.add('scale-105', 'ring-4', 'ring-warmBronze/50', 'shadow-warmBronze/20');
+              
+              setTimeout(() => {
+                contactCard.classList.remove('scale-105', 'ring-4', 'ring-warmBronze/50', 'shadow-warmBronze/20');
+              }, 1500);
+            }, 300);
+          }
+        };
+
+        if (window.location.hash === '#kontak') {
+          triggerContactGlow();
+        }
+
+        const contactLinks = document.querySelectorAll('a[href="#kontak"], a[href="index.html#kontak"]');
+        contactLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            triggerContactGlow();
+          });
+        });
       });
-    });
-  });
-</script>
+    </script>
+
 </body>
 </html>
