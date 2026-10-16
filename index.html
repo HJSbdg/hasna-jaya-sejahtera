@@ -44,6 +44,61 @@
     
     <!-- External Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <style>
+    /* CSS Khusus Tombol Menu Galeri 3D Silver & Kilatan Cahaya */
+    .nav-btn-galeri-style {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #f0f2f5 0%, #b8c0cc 45%, #707a8a 100%);
+        color: #0b192c !important;
+        font-weight: 700;
+        border-radius: 9999px;
+        border: 1px solid #ffffff;
+        box-shadow: 
+            inset 0 2px 3px rgba(255, 255, 255, 0.95),
+            inset 0 -3px 4px rgba(0, 0, 0, 0.45),
+            0 4px 10px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .nav-btn-galeri-style:hover {
+        transform: translateY(-2px);
+        box-shadow: 
+            inset 0 2px 5px rgba(255, 255, 255, 1),
+            inset 0 -3px 4px rgba(0, 0, 0, 0.5),
+            0 6px 15px rgba(255, 255, 255, 0.25);
+    }
+
+    .nav-btn-galeri-style::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -120%;
+        width: 70%;
+        height: 200%;
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.85) 50%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        transform: rotate(25deg);
+        animation: galeriShine 4s infinite ease-in-out;
+        pointer-events: none;
+    }
+
+    @keyframes galeriShine {
+        0% { left: -120%; }
+        20% { left: 200%; }
+        100% { left: 200%; }
+    }
+</style>
 </head>
 <!-- Tag body dengan background SVG Shield Pattern secara Global -->
 <body class="bg-navyBg text-white antialiased relative selection:bg-warmBronze selection:text-slate-900" 
@@ -59,6 +114,7 @@
                 </span>
             </a>
 
+            <!-- Menu Desktop -->
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="index.html" class="text-warmBronze font-semibold border-b-2 border-warmBronze pb-1">Beranda</a>
                 <a href="#tentang" class="hover:text-warmBronze transition">Tentang Kami</a>
@@ -66,6 +122,13 @@
                 <a href="#keunggulan" class="hover:text-warmBronze transition">Keunggulan</a>
                 <a href="legalitas.html" class="hover:text-warmBronze transition">Legalitas</a>
                 <a href="klien.html" class="hover:text-warmBronze transition">Klien</a>
+                
+                <!-- Tombol 3D Silver Galeri Desktop -->
+                <a href="galeri.html" class="nav-btn-galeri-style px-5 py-2.5">
+                    <i class="fa-solid fa-camera text-xs"></i>
+                    <span>Galeri</span>
+                </a>
+
                 <a href="#kontak" class="bg-burgundy hover:bg-burgundyHover text-white px-5 py-2.5 rounded-full font-semibold transition shadow-lg shadow-burgundy/30">
                     Hubungi Kami
                 </a>
@@ -76,6 +139,7 @@
             </button>
         </div>
 
+        <!-- Menu Mobile -->
         <div id="mobile-menu" class="hidden md:hidden bg-navyDark border-b border-warmBrown/20 px-4 pt-2 pb-6 space-y-3">
             <a href="index.html" class="block text-warmBronze font-semibold">Beranda</a>
             <a href="#tentang" class="block hover:text-warmBronze transition">Tentang Kami</a>
@@ -83,6 +147,13 @@
             <a href="#keunggulan" class="block hover:text-warmBronze transition">Keunggulan</a>
             <a href="legalitas.html" class="block hover:text-warmBronze transition">Legalitas</a>
             <a href="klien.html" class="block hover:text-warmBronze transition">Klien</a>
+            
+            <!-- Tombol 3D Silver Galeri Mobile -->
+            <a href="galeri.html" class="nav-btn-galeri-style px-5 py-2 my-1 inline-flex">
+                <i class="fa-solid fa-camera text-xs"></i>
+                <span>Galeri</span>
+            </a>
+
             <a href="#kontak" class="inline-block bg-burgundy hover:bg-burgundyHover text-white px-5 py-2 rounded-full font-semibold mt-2">
                 Hubungi Kami
             </a>
