@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Legalitas & Akreditasi - PT. Hasna Jaya Sejahtera</title>
-   
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="logo.png?v=2">
-<link rel="apple-touch-icon" href="logo.png?v=2">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -49,163 +46,60 @@
     <!-- =========================================================
          NAVBAR
     ========================================================== -->
-    <nav
-        class="fixed top-0 left-0 w-full bg-navyDark/90 backdrop-blur-md z-50 border-b border-warmBrown/20"
-    >
-
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
-        >
-
-            <!-- Logo -->
-            <a
-                href="index.html"
-                class="flex items-center gap-3"
-            >
-                <img
-                    src="logo.png"
-                    alt="PT Hasna Jaya Sejahtera Logo"
-                    class="h-10 sm:h-12 md:h-14 w-auto object-contain"
-                >
-
-                <span
-                    class="font-bold text-lg sm:text-xl tracking-wide text-white"
-                >
+    <nav class="fixed top-0 left-0 w-full bg-navyDark/90 backdrop-blur-md z-50 border-b border-warmBrown/20 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="PT Hasna Jaya Sejahtera Logo" class="h-12 w-auto object-contain">
+                <span class="font-bold text-lg sm:text-xl tracking-wide text-white">
                     PT. HASNA JAYA SEJAHTERA
                 </span>
             </a>
 
+            <!-- Menu Desktop (Posisi Galeri di antara Klien dan Hubungi Kami) -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-warmBronze transition">Beranda</a>
+                <a href="index.html#tentang" class="hover:text-warmBronze transition">Tentang Kami</a>
+                <a href="index.html#layanan" class="hover:text-warmBronze transition">Layanan</a>
+                <a href="index.html#keunggulan" class="hover:text-warmBronze transition">Keunggulan</a>
+                <a href="legalitas.html" class="hover:text-warmBronze transition">Legalitas</a>
+                <a href="klien.html" class="hover:text-warmBronze transition">Klien</a>
 
-            <!-- Menu Desktop -->
-            <div
-                class="hidden md:flex items-center space-x-8 text-sm font-medium"
-            >
-
-                <a
-                    href="index.html"
-                    class="hover:text-warmBronze transition"
-                >
-                    Beranda
+                <!-- Tombol 3D Silver Galeri Desktop -->
+                <a href="galeri.html" id="nav-btn-galeri" class="nav-btn-galeri-style px-5 py-2.5">
+                    <i class="fa-solid fa-camera text-xs"></i>
+                    <span>Galeri</span>
                 </a>
 
-                <a
-                    href="index.html#tentang"
-                    class="hover:text-warmBronze transition"
-                >
-                    Tentang Kami
-                </a>
-
-                <a
-                    href="index.html#layanan"
-                    class="hover:text-warmBronze transition"
-                >
-                    Layanan
-                </a>
-
-                <a
-                    href="index.html#keunggulan"
-                    class="hover:text-warmBronze transition"
-                >
-                    Keunggulan
-                </a>
-
-                <!-- Active -->
-                <a
-                    href="legalitas.html"
-                    class="text-warmBronze font-semibold border-b-2 border-warmBronze pb-1"
-                >
-                    Legalitas
-                </a>
-
-                <a
-                    href="klien.html"
-                    class="hover:text-warmBronze transition"
-                >
-                    Klien
-                </a>
-
-                <a
-                    href="index.html#kontak"
-                    class="bg-burgundy hover:bg-burgundyHover text-white px-5 py-2.5 rounded-full font-semibold transition shadow-lg shadow-burgundy/30"
-                >
+                <a href="index.html#kontak" class="bg-burgundy hover:bg-burgundyHover text-white px-5 py-2.5 rounded-full font-semibold transition shadow-lg shadow-burgundy/30">
                     Hubungi Kami
                 </a>
-
             </div>
 
-
             <!-- Mobile Menu Button -->
-            <button
-                id="menu-btn"
-                type="button"
-                aria-label="Buka menu navigasi"
-                aria-controls="mobile-menu"
-                aria-expanded="false"
-                class="md:hidden text-slate-300 hover:text-white focus:outline-none"
-            >
+            <button id="menu-btn" type="button" aria-label="Buka menu navigasi" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
                 <i class="fa-solid fa-bars text-2xl"></i>
             </button>
-
         </div>
 
-
-        <!-- Mobile Menu -->
-        <div
-            id="mobile-menu"
-            class="hidden md:hidden bg-navyDark border-b border-warmBrown/20 px-4 pt-2 pb-6 space-y-3"
-        >
-
-            <a
-                href="index.html"
-                class="block hover:text-warmBronze transition"
-            >
-                Beranda
+        <!-- Mobile Menu (Posisi Galeri di antara Klien dan Hubungi Kami) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navyDark border-b border-warmBrown/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block hover:text-warmBronze transition">Beranda</a>
+            <a href="index.html#tentang" class="block hover:text-warmBronze transition">Tentang Kami</a>
+            <a href="index.html#layanan" class="block hover:text-warmBronze transition">Layanan</a>
+            <a href="index.html#keunggulan" class="block hover:text-warmBronze transition">Keunggulan</a>
+            <a href="legalitas.html" class="block hover:text-warmBronze transition">Legalitas</a>            
+            <a href="klien.html" class="block hover:text-warmBronze transition">Klien</a>
+            
+            <!-- Tombol 3D Silver Galeri Mobile -->
+            <a href="galeri.html" class="nav-btn-galeri-style px-5 py-2 my-1 inline-flex">
+                <i class="fa-solid fa-camera text-xs"></i>
+                <span>Galeri</span>
             </a>
 
-            <a
-                href="index.html#tentang"
-                class="block hover:text-warmBronze transition"
-            >
-                Tentang Kami
-            </a>
-
-            <a
-                href="index.html#layanan"
-                class="block hover:text-warmBronze transition"
-            >
-                Layanan
-            </a>
-
-            <a
-                href="index.html#keunggulan"
-                class="block hover:text-warmBronze transition"
-            >
-                Keunggulan
-            </a>
-
-            <a
-                href="legalitas.html"
-                class="block text-warmBronze font-semibold"
-            >
-                Legalitas
-            </a>
-
-            <a
-                href="klien.html"
-                class="block hover:text-warmBronze transition"
-            >
-                Klien
-            </a>
-
-            <a
-                href="index.html#kontak"
-                class="inline-block bg-burgundy hover:bg-burgundyHover text-white px-5 py-2 rounded-full font-semibold mt-2"
-            >
+            <a href="index.html#kontak" class="block bg-burgundy hover:bg-burgundyHover text-white px-5 py-2 rounded-full font-semibold mt-2 text-center">
                 Hubungi Kami
             </a>
-
         </div>
-
     </nav>
 
 
