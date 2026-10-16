@@ -957,9 +957,56 @@
         });
       });
     </script>
+    <!-- Script Hamburger Menu Mobile -->
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-</body>
-</html>
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            const isOpening = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.setAttribute('aria-expanded', String(isOpening));
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+</script>
+
+<!-- Script Kontak Card Glow Effect -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const contactCard = document.getElementById('contact-card-box');
+
+    const triggerContactGlow = () => {
+      if (contactCard) {
+        setTimeout(() => {
+          contactCard.classList.add('scale-105', 'ring-4', 'ring-warmBronze/50', 'shadow-warmBronze/20');
+          
+          setTimeout(() => {
+            contactCard.classList.remove('scale-105', 'ring-4', 'ring-warmBronze/50', 'shadow-warmBronze/20');
+          }, 1500);
+        }, 300);
+      }
+    };
+
+    if (window.location.hash === '#kontak') {
+      triggerContactGlow();
+    }
+
+    const contactLinks = document.querySelectorAll('a[href="#kontak"], a[href="index.html#kontak"]');
+    contactLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        triggerContactGlow();
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
